@@ -22,6 +22,7 @@ public class Produto {
     private String nome;
     private String alias;
     private Double quantidade;
+    private Double estoque;
     private Double valor;
     private String unidade;
     private String image;
