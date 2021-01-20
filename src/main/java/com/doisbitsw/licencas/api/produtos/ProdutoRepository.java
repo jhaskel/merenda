@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
-    @Query(value = "select * from produto  order by id desc where ativo = true", nativeQuery = true)
+    @Query(value = "select * from produto  where ativo = TRUE order by id desc ", nativeQuery = true)
     List<Produto> findByCode(String code);
 }
