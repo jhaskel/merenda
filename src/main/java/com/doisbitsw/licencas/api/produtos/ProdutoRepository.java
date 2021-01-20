@@ -9,4 +9,8 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
     @Query(value = "select * from produto  where ativo = TRUE order by id desc ", nativeQuery = true)
     List<Produto> findByCode(String code);
+
+
+    @Query(value = "select * from produto  where categoria = :categoria and ativo = TRUE order by id desc ", nativeQuery = true)
+    List<Produto> findByCategoria(Long categoria);
 }
