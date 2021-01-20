@@ -1,4 +1,4 @@
-package com.doisbitsw.licencas.api.config;
+package com.doisbitsw.licencas.api.cart;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,21 +9,21 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/config")
-public class ConfigController {
+@RequestMapping("/api/v1/cart")
+public class CartController {
     @Autowired
-    private ConfigService service;
+    private CartService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<ConfigDTO> carros = service.getCarros();
+        List<CartDTO> carros = service.getCarros();
         return ResponseEntity.ok(carros);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        ConfigDTO carro = service.getCarroById(id);
+        CartDTO carro = service.getCarroById(id);
 
         return ResponseEntity.ok(carro);
     }
@@ -33,9 +33,9 @@ public class ConfigController {
 
     @PostMapping
 
-    public ResponseEntity post(@RequestBody Config config) {
+    public ResponseEntity post(@RequestBody Cart cart) {
 
-        ConfigDTO c = service.insert(config);
+        CartDTO c = service.insert(cart);
 
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
@@ -47,11 +47,11 @@ public class ConfigController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Config config) {
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Cart cart) {
 
-        config.setId(id);
+        cart.setId(id);
 
-        ConfigDTO c = service.update(config, id);
+        CartDTO c = service.update(cart, id);
 
         return c != null ?
                 ResponseEntity.ok(c) :

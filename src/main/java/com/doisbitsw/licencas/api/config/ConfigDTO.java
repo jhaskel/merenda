@@ -6,17 +6,15 @@ import org.modelmapper.ModelMapper;
 @Data
 public class ConfigDTO {
     private Long id;
-    private Double ufm;
-    private String administrador;
+    private String entidade;
+    private String setor;
+    private String nomeContato;
     private String cargo;
-    private String celular;
     private String email;
-    private String sexo;
-    private String cidade;
+    private String celular;
+    private Boolean ativo;
     private String created;
     private String modified;
-    private Boolean ativo;
-
 
 
     public static ConfigDTO create(Config config) {

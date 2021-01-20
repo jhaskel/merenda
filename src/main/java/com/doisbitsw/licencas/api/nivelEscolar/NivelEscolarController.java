@@ -1,4 +1,4 @@
-package com.doisbitsw.licencas.api.config;
+package com.doisbitsw.licencas.api.nivelEscolar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,21 +9,21 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/config")
-public class ConfigController {
+@RequestMapping("/api/v1/nivel")
+public class NivelEscolarController {
     @Autowired
-    private ConfigService service;
+    private NivelEscolarService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<ConfigDTO> carros = service.getCarros();
+        List<NivelEscolarDTO> carros = service.getCarros();
         return ResponseEntity.ok(carros);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        ConfigDTO carro = service.getCarroById(id);
+        NivelEscolarDTO carro = service.getCarroById(id);
 
         return ResponseEntity.ok(carro);
     }
@@ -33,9 +33,9 @@ public class ConfigController {
 
     @PostMapping
 
-    public ResponseEntity post(@RequestBody Config config) {
+    public ResponseEntity post(@RequestBody NivelEscolar nivelEscolar) {
 
-        ConfigDTO c = service.insert(config);
+        NivelEscolarDTO c = service.insert(nivelEscolar);
 
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
@@ -47,11 +47,11 @@ public class ConfigController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Config config) {
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody NivelEscolar nivelEscolar) {
 
-        config.setId(id);
+        nivelEscolar.setId(id);
 
-        ConfigDTO c = service.update(config, id);
+        NivelEscolarDTO c = service.update(nivelEscolar, id);
 
         return c != null ?
                 ResponseEntity.ok(c) :

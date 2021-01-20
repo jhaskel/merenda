@@ -22,7 +22,7 @@ public class ConfigService {
 
     public ConfigDTO getCarroById(Long id) {
         Optional<Config> carro = rep.findById(id);
-        return carro.map(ConfigDTO::create).orElseThrow(() -> new ObjectNotFoundException("Empreendimento não encontrado"));
+        return carro.map(ConfigDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
 
@@ -40,11 +40,11 @@ public class ConfigService {
         if(optional.isPresent()) {
             Config db = optional.get();
             // Copiar as propriedades
-            db.setAdministrador(config.getAdministrador());
+            db.setEntidade(config.getEntidade());
+            db.setNomeContato(config.getNomeContato());
+            System.out.println("Carro id " + db.getId());
 
-            System.out.println("Empreendimento id " + db.getId());
-
-            // Atualiza o empreendimento
+            // Atualiza o carro
             rep.save(db);
 
             return ConfigDTO.create(db);
@@ -57,7 +57,6 @@ public class ConfigService {
     public void delete(Long id) {
         rep.deleteById(id);
     }
-
 
 
 }

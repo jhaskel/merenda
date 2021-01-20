@@ -1,4 +1,4 @@
-package com.doisbitsw.licencas.api.config;
+package com.doisbitsw.licencas.api.produtos;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,33 +9,39 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/config")
-public class ConfigController {
+@RequestMapping("/api/v1/produtos")
+public class ProdutoController {
     @Autowired
-    private ConfigService service;
+    private ProdutoService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<ConfigDTO> carros = service.getCarros();
+        List<ProdutoDTO> carros = service.getCarros();
         return ResponseEntity.ok(carros);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        ConfigDTO carro = service.getCarroById(id);
+        ProdutoDTO carro = service.getCarroById(id);
 
         return ResponseEntity.ok(carro);
     }
 
-
+    @GetMapping("/code/{code}")
+    public ResponseEntity getCarrosByCode(@PathVariable("code") String code) {
+        List<ProdutoDTO> carros = service.getCarrosByCode(code);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
 
 
     @PostMapping
 
-    public ResponseEntity post(@RequestBody Config config) {
+    public ResponseEntity post(@RequestBody Produto produto) {
 
-        ConfigDTO c = service.insert(config);
+        ProdutoDTO c = service.insert(produto);
 
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
@@ -47,11 +53,11 @@ public class ConfigController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Config config) {
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Produto produto) {
 
-        config.setId(id);
+        produto.setId(id);
 
-        ConfigDTO c = service.update(config, id);
+        ProdutoDTO c = service.update(produto, id);
 
         return c != null ?
                 ResponseEntity.ok(c) :

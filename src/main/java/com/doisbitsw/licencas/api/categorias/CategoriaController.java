@@ -1,4 +1,4 @@
-package com.doisbitsw.licencas.api.config;
+package com.doisbitsw.licencas.api.categorias;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -9,33 +9,32 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/config")
-public class ConfigController {
+@RequestMapping("/api/v1/categorias")
+public class CategoriaController {
     @Autowired
-    private ConfigService service;
+    private CategoriaService service;
 
 
     @GetMapping()
     public ResponseEntity get() {
-        List<ConfigDTO> carros = service.getCarros();
+        List<CategoriaDTO> carros = service.getCarros();
         return ResponseEntity.ok(carros);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
-        ConfigDTO carro = service.getCarroById(id);
+        CategoriaDTO carro = service.getCarroById(id);
 
         return ResponseEntity.ok(carro);
     }
 
 
 
-
     @PostMapping
 
-    public ResponseEntity post(@RequestBody Config config) {
+    public ResponseEntity post(@RequestBody Categoria categoria) {
 
-        ConfigDTO c = service.insert(config);
+        CategoriaDTO c = service.insert(categoria);
 
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
@@ -47,11 +46,11 @@ public class ConfigController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Config config) {
+    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Categoria categoria) {
 
-        config.setId(id);
+        categoria.setId(id);
 
-        ConfigDTO c = service.update(config, id);
+        CategoriaDTO c = service.update(categoria, id);
 
         return c != null ?
                 ResponseEntity.ok(c) :

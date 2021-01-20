@@ -1,4 +1,4 @@
-package com.doisbitsw.licencas.api.config;
+package com.doisbitsw.licencas.api.cart;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,20 +11,23 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Data
 @Entity
-public class Config {
+public class Cart {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String entidade;
-    private String setor;
-    private String nomeContato;
-    private String cargo;
-    private String email;
-    private String celular;
-    private Boolean ativo;
+    private Long escola;
+    private Long comprador;
+    private Long produto;
+    private String alias;
+    private Double quantidade;
+    private Double valor;
+    private Double total;
+    private Long obs;
     private String created;
-    private String modified;
+    private Boolean ativo;
+
+
 
 
 

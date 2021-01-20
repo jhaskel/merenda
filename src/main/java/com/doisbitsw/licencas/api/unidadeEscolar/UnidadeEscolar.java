@@ -1,4 +1,4 @@
-package com.doisbitsw.licencas.api.config;
+package com.doisbitsw.licencas.api.unidadeEscolar;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,17 +11,17 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Data
 @Entity
-public class Config {
+public class UnidadeEscolar {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String entidade;
-    private String setor;
-    private String nomeContato;
-    private String cargo;
-    private String email;
-    private String celular;
+    private Long nivelescolar;
+    private String nome;
+    private String alias;
+    private String endereco;
+    private String bairro;
+    private Long alunos;
     private Boolean ativo;
     private String created;
     private String modified;

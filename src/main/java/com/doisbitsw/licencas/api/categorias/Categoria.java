@@ -1,4 +1,4 @@
-package com.doisbitsw.licencas.api.config;
+package com.doisbitsw.licencas.api.categorias;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,20 +11,14 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Data
 @Entity
-public class Config {
+public class Categoria {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String entidade;
-    private String setor;
-    private String nomeContato;
-    private String cargo;
-    private String email;
-    private String celular;
-    private Boolean ativo;
-    private String created;
-    private String modified;
+    private String nome;
+    private String image;
+
 
 
 

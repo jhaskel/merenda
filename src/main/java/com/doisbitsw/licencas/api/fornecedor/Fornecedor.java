@@ -1,4 +1,4 @@
-package com.doisbitsw.licencas.api.config;
+package com.doisbitsw.licencas.api.fornecedor;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,15 +11,16 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Data
 @Entity
-public class Config {
+public class Fornecedor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String entidade;
-    private String setor;
-    private String nomeContato;
-    private String cargo;
+    private String nome;
+    private String cnpj;
+    private String endereco;
+    private String bairro;
+    private String cidade;
     private String email;
     private String celular;
     private Boolean ativo;
