@@ -36,9 +36,9 @@ public class ProdutoController {
                 ResponseEntity.ok(carros);
     }
 
-    @GetMapping("/categoria/{categoria}")
-    public ResponseEntity getCarrosByCategoria(@PathVariable("categoria") Long categoria) {
-        List<ProdutoDTO> carros = service.getCarrosByCategoria(categoria);
+    @GetMapping("/escola/{escola}")
+    public ResponseEntity getCarrosByEscola(@PathVariable("escola") Long escola) {
+        List<ProdutoDTO> carros = service.getCarrosByEscola(escola);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);

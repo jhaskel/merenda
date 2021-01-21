@@ -30,8 +30,8 @@ public class ProdutoService {
     }
 
 
-    public List<ProdutoDTO> getCarrosByCategoria(Long categoria) {
-        return rep.findByCategoria(categoria).stream().map(ProdutoDTO::create).collect(Collectors.toList());
+    public List<ProdutoDTO> getCarrosByEscola(Long escola) {
+        return rep.findByEcola(escola).stream().map(ProdutoDTO::create).collect(Collectors.toList());
     }
 
     public ProdutoDTO insert(Produto produto) {

@@ -11,6 +11,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
     List<Produto> findByCode(String code);
 
 
-    @Query(value = "select * from produto  where categoria = :categoria and ativo = TRUE order by id desc ", nativeQuery = true)
-    List<Produto> findByCategoria(Long categoria);
+    @Query(value = "SELECT * FROM produto p\n" +
+            "WHERE p.ativo = true and p.id NOT IN (SELECT produto FROM cart WHERE escola = :escola) ORDER BY p.categoria;  ", nativeQuery = true)
+    List<Produto> findByEcola(Long escola);
 }
