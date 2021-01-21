@@ -19,6 +19,7 @@ public class UsuarioDTO {
     private String created;
     private String modified;
     private String nivel;
+    private Long escola;
 
 
 

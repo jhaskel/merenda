@@ -28,6 +28,7 @@ public class Usuario {
     private String created;
     private String modified;
     private String nivel;
+    private Long escola;
 
 
 
