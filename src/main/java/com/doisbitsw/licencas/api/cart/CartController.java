@@ -1,5 +1,6 @@
 package com.doisbitsw.licencas.api.cart;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,6 +29,14 @@ public class CartController {
         return ResponseEntity.ok(carro);
     }
 
+
+    @GetMapping("/escola/{escola}")
+    public ResponseEntity getCarrosByEscola(@PathVariable("escola") Long escola) {
+        List<CartDTO> carros = service.getCarrosByEscola(escola);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
 
 
 

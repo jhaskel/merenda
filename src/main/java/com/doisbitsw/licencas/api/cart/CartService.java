@@ -1,6 +1,7 @@
 package com.doisbitsw.licencas.api.cart;
 
 import com.doisbitsw.licencas.api.infra.exception.ObjectNotFoundException;
+import com.doisbitsw.licencas.api.produtos.ProdutoDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
@@ -23,6 +24,10 @@ public class CartService {
     public CartDTO getCarroById(Long id) {
         Optional<Cart> carro = rep.findById(id);
         return carro.map(CartDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
+    }
+
+    public List<CartDTO> getCarrosByEscola(Long escola) {
+        return rep.findByEcola(escola).stream().map(CartDTO::create).collect(Collectors.toList());
     }
 
 
