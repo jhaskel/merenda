@@ -13,7 +13,7 @@ public class CartDTO {
     private Double quantidade;
     private Double valor;
     private Double total;
-    private Long obs;
+    private String obs;
     private String created;
     private Boolean ativo;
 
