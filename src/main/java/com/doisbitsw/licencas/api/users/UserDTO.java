@@ -26,6 +26,7 @@ public class UserDTO {
     private String created;
     private String modified;
     private String nivel;
+    private Long escola;
     // token jwt
     private String token;
     private List<String> roles;
