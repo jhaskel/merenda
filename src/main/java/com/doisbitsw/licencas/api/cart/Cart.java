@@ -24,6 +24,8 @@ public class Cart {
     private Double valor;
     private Double total;
     private String obs;
+    private Long alunos;
+    private String unidade;
     private String created;
     private Boolean ativo;
 
