@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface UnidadeEscolarRepository extends JpaRepository<UnidadeEscolar, Long> {
 
-    List<UnidadeEscolar> findByNivelescolar(Long escola);
+    List<UnidadeEscolar> findCarroById(Long escola);
 }

@@ -27,10 +27,10 @@ public class UnidadeEscolarController {
 
         return ResponseEntity.ok(carro);
     }
-    @GetMapping("/escola/{id}")
+    @GetMapping("/id/{id}")
 
-    public ResponseEntity getCarrosByNivelescolar(@PathVariable("id") Long id) {
-        List<UnidadeEscolarDTO> carros = service.getCarrosByNivelescolar(id);
+    public ResponseEntity getCarrosById(@PathVariable("id") Long id) {
+        List<UnidadeEscolarDTO> carros = service.getCarrosById(id);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);

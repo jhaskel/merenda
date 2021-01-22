@@ -26,8 +26,8 @@ public class UnidadeEscolarService {
     }
 
 
-    public List<UnidadeEscolarDTO> getCarrosByNivelescolar(Long escola) {
-        return rep.findByNivelescolar(escola).stream().map(UnidadeEscolarDTO::create).collect(Collectors.toList());
+    public List<UnidadeEscolarDTO> getCarrosById(Long id) {
+        return rep.findCarroById(id).stream().map(UnidadeEscolarDTO::create).collect(Collectors.toList());
     }
 
 
