@@ -18,6 +18,7 @@ public class Pedido {
     private Long id;
     private String code;
     private Long escola;
+    private String nomeescola;
     private Long nivel;
     private Double total;
     private Long comprador;

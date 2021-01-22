@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 public class PedidoDTO {
     private Long id;
     private String code;
+    private String nomeescola;
     private Long escola;
     private Long nivel;
     private Double total;
