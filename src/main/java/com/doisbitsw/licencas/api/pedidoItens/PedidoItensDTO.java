@@ -15,7 +15,7 @@ public class PedidoItensDTO {
     private Double valor;
     private Double total;
     private Boolean isaf;
-    private Long obs;
+    private String obs;
     private String created;
 
     public static PedidoItensDTO create(PedidoItens pedidoItens) {

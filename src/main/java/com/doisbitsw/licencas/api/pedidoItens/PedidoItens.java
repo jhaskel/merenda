@@ -25,7 +25,7 @@ public class PedidoItens {
     private Double valor;
     private Double total;
     private Boolean isaf;
-    private Long obs;
+    private String obs;
     private String created;
 
 
