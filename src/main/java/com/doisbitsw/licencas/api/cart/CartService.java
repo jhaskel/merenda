@@ -46,7 +46,9 @@ public class CartService {
             Cart db = optional.get();
             // Copiar as propriedades
             db.setAtivo(cart.getAtivo());
-            db.setAlias(cart.getAlias());
+            db.setQuantidade(cart.getQuantidade());
+            db.setValor(cart.getValor());
+            db.setTotal(cart.getTotal());
             System.out.println("Carro id " + db.getId());
 
             // Atualiza o carro
