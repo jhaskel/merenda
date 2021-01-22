@@ -7,6 +7,8 @@ import org.modelmapper.ModelMapper;
 public class PedidoItensDTO {
     private Long id;
     private String pedido;
+    private Long escola;
+    private Long nivel;
     private Long produto;
     private String alias;
     private Double quantidade;
