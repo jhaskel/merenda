@@ -24,6 +24,10 @@ public class UnidadeEscolarService {
         Optional<UnidadeEscolar> carro = rep.findById(id);
         return carro.map(UnidadeEscolarDTO::create).orElseThrow(() -> new ObjectNotFoundException("Nivel não encontrado"));
     }
+    public List<UnidadeEscolarDTO> getCarrosById(Long id) {
+        return rep.findByIds(id).stream().map(UnidadeEscolarDTO::create).collect(Collectors.toList());
+    }
+
 
 
 
