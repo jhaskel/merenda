@@ -27,13 +27,18 @@ public class UnidadeEscolarController {
 
         return ResponseEntity.ok(carro);
     }
-    @GetMapping("/id/{id}")
-    public ResponseEntity getCarrosById(@PathVariable("id") Long id) {
-        List<UnidadeEscolarDTO> carros = service.getCarrosById(id);
+    @GetMapping("/escola/{id}")
+
+    public ResponseEntity getCarrosByNivelescolar(@PathVariable("id") Long id) {
+        List<UnidadeEscolarDTO> carros = service.getCarrosByNivelescolar(id);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
+
+
+
+
 
 
     @PostMapping

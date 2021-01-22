@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface UnidadeEscolarRepository extends JpaRepository<UnidadeEscolar, Long> {
 
-    List<UnidadeEscolar> findByIds(Long id);
+    List<UnidadeEscolar> findByNivelescolar(Long escola);
 }
