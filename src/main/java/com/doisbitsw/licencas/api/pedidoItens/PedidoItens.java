@@ -27,6 +27,8 @@ public class PedidoItens {
     private Boolean isaf;
     private String obs;
     private String created;
+    private Long categoria;
+    private Long fornecedor;
 
 
 

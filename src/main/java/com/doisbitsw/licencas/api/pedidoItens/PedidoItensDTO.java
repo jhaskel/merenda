@@ -17,6 +17,8 @@ public class PedidoItensDTO {
     private Boolean isaf;
     private String obs;
     private String created;
+    private Long categoria;
+    private Long fornecedor;
 
     public static PedidoItensDTO create(PedidoItens pedidoItens) {
         ModelMapper modelMapper = new ModelMapper();

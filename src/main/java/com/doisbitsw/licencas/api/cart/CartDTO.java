@@ -18,6 +18,8 @@ public class CartDTO {
     private String unidade;
     private String created;
     private Boolean ativo;
+    private Long categoria;
+    private Long fornecedor;
 
     public static CartDTO create(Cart cart) {
         ModelMapper modelMapper = new ModelMapper();

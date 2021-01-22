@@ -28,6 +28,9 @@ public class Cart {
     private String unidade;
     private String created;
     private Boolean ativo;
+    private Long categoria;
+    private Long fornecedor;
+
 
 
 
