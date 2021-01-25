@@ -42,6 +42,7 @@ public class PedidoService {
             // Copiar as propriedades
             db.setAtivo(pedido.getAtivo());
             db.setCode(pedido.getCode());
+            db.setIscheck(pedidoItens.getIscheck());
             System.out.println("Carro id " + db.getId());
 
             // Atualiza o carro
