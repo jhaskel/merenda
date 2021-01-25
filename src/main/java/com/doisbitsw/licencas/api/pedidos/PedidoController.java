@@ -48,11 +48,8 @@ public class PedidoController {
 
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Pedido pedido) {
-
         pedido.setId(id);
-
         PedidoDTO c = service.update(pedido, id);
-
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
