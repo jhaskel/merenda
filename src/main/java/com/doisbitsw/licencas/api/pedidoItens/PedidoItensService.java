@@ -46,8 +46,20 @@ public class PedidoItensService {
             PedidoItens db = optional.get();
             // Copiar as propriedades
             db.setAlias(pedidoItens.getAlias());
+            db.setPedido(pedidoItens.getPedido());
             db.setIsaf(pedidoItens.getIsaf());
             db.setIscheck(pedidoItens.getIscheck());
+            db.setNivel(pedidoItens.getNivel());
+            db.setEscola(pedidoItens.getEscola());
+            db.setProduto(pedidoItens.getProduto());
+            db.setProduto(pedidoItens.getProduto());
+            db.setObs(pedidoItens.getObs());
+            db.setQuantidade(pedidoItens.getQuantidade());
+            db.setValor(pedidoItens.getValor());
+            db.setTotal(pedidoItens.getTotal());
+            db.setCreated(pedidoItens.getCreated());
+            db.setFornecedor(pedidoItens.getFornecedor());
+            db.setCategoria(pedidoItens.getCategoria());
 
             System.out.println("Carro id " + db.getId());
 
