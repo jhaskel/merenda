@@ -43,6 +43,7 @@ public class PedidoService {
             db.setAtivo(pedido.getAtivo());
             db.setCode(pedido.getCode());
             db.setIscheck(pedido.getIscheck());
+            db.setStatus(pedido.getStatus());
             System.out.println("Carro id " + db.getId());
 
             // Atualiza o carro
