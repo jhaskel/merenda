@@ -28,6 +28,8 @@ public class Pedido {
     private String created;
     private String modified;
     private Boolean ativo;
+    private Boolean ischeck;
+
 
 
 

@@ -18,6 +18,7 @@ public class PedidoDTO {
     private String created;
     private String modified;
     private Boolean ativo;
+    private Boolean ischeck;
 
     public static PedidoDTO create(Pedido pedido) {
         ModelMapper modelMapper = new ModelMapper();

@@ -29,6 +29,7 @@ public class PedidoItens {
     private String created;
     private Long categoria;
     private Long fornecedor;
+    private Boolean ischeck;
 
 
 

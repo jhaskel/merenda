@@ -19,6 +19,7 @@ public class PedidoItensDTO {
     private String created;
     private Long categoria;
     private Long fornecedor;
+    private Boolean ischeck;
 
     public static PedidoItensDTO create(PedidoItens pedidoItens) {
         ModelMapper modelMapper = new ModelMapper();
