@@ -31,6 +31,12 @@ public class PedidoItensService {
     }
 
 
+    public List<PedidoItensDTO> getCarrosByAf(Long af) {
+        return rep.findByAf(af).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
+    }
+
+
+
 
     public PedidoItensDTO insert(PedidoItens pedidoItens) {
         Assert.isNull(pedidoItens.getId(),"Não foi possível inserir o registro");
