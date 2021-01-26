@@ -12,7 +12,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     @Query(value = "SELECT *  FROM pedido_itens WHERE  af = 0;", nativeQuery = true)
     List<PedidoItens> findAll();
 
-    @Query(value = "SELECT * FROM pedido_itens WHERE af > 0 GROUP BY af;", nativeQuery = true)
+    @Query(value = "SELECT *  FROM pedido_itens WHERE  af = 0;", nativeQuery = true)
     List<PedidoItens> findAll2();
 
 
@@ -21,8 +21,8 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     List<PedidoItens> findByPedido(String pedido);
 
 
-    @Query(value = "SELECT ite.* FROM pedido_itens ite\n" +
-
+    @Query(value = "SELECT ite.*,esc.nome AS escolanome FROM pedido_itens ite\n" +
+            "INNER JOIN nivel_escolar esc ON esc.id = ite.escola\n" +
             "WHERE ite.af > :af  \n" +
             "GROUP BY ite.af;", nativeQuery = true)
     List<PedidoItens> findByAf(Long af);
