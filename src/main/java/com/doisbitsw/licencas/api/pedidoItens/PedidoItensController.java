@@ -35,10 +35,7 @@ public class PedidoItensController {
                 ResponseEntity.ok(carros);
     }
 
-
-
     @PostMapping
-
     public ResponseEntity post(@RequestBody PedidoItens pedidoItens) {
 
         PedidoItensDTO c = service.insert(pedidoItens);
@@ -54,15 +51,13 @@ public class PedidoItensController {
 
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody PedidoItens pedidoItens) {
-
         pedidoItens.setId(id);
-
         PedidoItensDTO c = service.update(pedidoItens, id);
-
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
     }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) {

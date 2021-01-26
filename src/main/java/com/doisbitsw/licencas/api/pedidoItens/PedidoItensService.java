@@ -47,7 +47,7 @@ public class PedidoItensService {
             // Copiar as propriedades
             db.setAlias(pedidoItens.getAlias());
             db.setPedido(pedidoItens.getPedido());
-            db.setIsaf(pedidoItens.getIsaf());
+            db.setAf(pedidoItens.getAf());
             db.setIscheck(pedidoItens.getIscheck());
             db.setNivel(pedidoItens.getNivel());
             db.setEscola(pedidoItens.getEscola());
@@ -72,6 +72,7 @@ public class PedidoItensService {
             //throw new RuntimeException("Não foi possível atualizar o registro");
         }
     }
+
 
     public void delete(Long id) {
         rep.deleteById(id);
