@@ -12,7 +12,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     @Query(value = "SELECT *  FROM pedido_itens WHERE  af = 0;", nativeQuery = true)
     List<PedidoItens> findAll();
 
-    @Query(value = "SELECT *  FROM pedido_itens;", nativeQuery = true)
+    @Query(value = "SELECT *  FROM pedido_itens", nativeQuery = true)
     List<PedidoItens> findAll2();
 
 
