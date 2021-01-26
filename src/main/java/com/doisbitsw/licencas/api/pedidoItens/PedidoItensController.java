@@ -40,6 +40,8 @@ public class PedidoItensController {
                 ResponseEntity.ok(carros);
     }
 
+
+
     @GetMapping("/af/{af}")
     public ResponseEntity getCarrosByAf(@PathVariable("af") Long af) {
         List<PedidoItensDTO> carros = service.getCarrosByAf(af);
@@ -47,6 +49,8 @@ public class PedidoItensController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
+
+
 
     @PostMapping
     public ResponseEntity post(@RequestBody PedidoItens pedidoItens) {

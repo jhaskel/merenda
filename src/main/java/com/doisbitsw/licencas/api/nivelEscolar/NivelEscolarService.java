@@ -25,6 +25,10 @@ public class NivelEscolarService {
         return carro.map(NivelEscolarDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
+    public String getRe(Long id){
+        return rep.findNome(id);
+    }
+
 
 
     public NivelEscolarDTO insert(NivelEscolar nivelEscolar) {

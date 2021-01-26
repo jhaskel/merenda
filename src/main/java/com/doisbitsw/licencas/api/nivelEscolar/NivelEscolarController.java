@@ -28,6 +28,11 @@ public class NivelEscolarController {
         return ResponseEntity.ok(carro);
     }
 
+    @GetMapping("/nome/{id}")
+    public String getRe(@PathVariable("id") Long id) {
+        return service.getRe(id);
+    }
+
 
 
 
