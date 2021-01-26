@@ -9,10 +9,10 @@ import java.util.Optional;
 
 public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> {
 
-    @Query(value = "SELECT *  FROM pedido_itens;", nativeQuery = true)
+    @Query(value = "SELECT *  FROM pedido_itens WHERE  af = 0;", nativeQuery = true)
     List<PedidoItens> findAll();
 
-    @Query(value = "SELECT *  FROM pedido_itens", nativeQuery = true)
+    @Query(value = "SELECT * FROM pedido_itens WHERE af > :af  GROUP BY af;", nativeQuery = true)
     List<PedidoItens> findAll2();
 
 
@@ -21,7 +21,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     List<PedidoItens> findByPedido(String pedido);
 
 
-    @Query(value = "SELECT * FROM pedido_itens;", nativeQuery = true)
+    @Query(value = "SELECT * FROM pedido_itens WHERE af > :af  GROUP BY af;", nativeQuery = true)
     List<PedidoItens> findByAf(Long af);
 
 }
