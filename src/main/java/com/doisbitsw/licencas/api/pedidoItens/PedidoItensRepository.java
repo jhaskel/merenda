@@ -21,7 +21,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     List<PedidoItens> findByPedido(String pedido);
 
 
-    @Query(value = "SELECT ite.*,esc.nome AS escolanome FROM pedido_itens ite\n" +
+    @Query(value = "SELECT ite.*,niv.nome AS nivelnome, forn.nome AS fornecedornome FROM pedido_itens ite\n" +
             "INNER JOIN fornecedor forn ON forn.id = ite.fornecedor\n" +
             "INNER JOIN nivel_escolar niv ON niv.id = ite.nivel\n" +
             "WHERE ite.af > :af  \n" +
