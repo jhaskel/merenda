@@ -20,6 +20,11 @@ public class PedidoItensController {
         List<PedidoItensDTO> carros = service.getCarros();
         return ResponseEntity.ok(carros);
     }
+    @GetMapping("/afi")
+    public ResponseEntity get2() {
+        List<PedidoItensDTO> carros = service.getCarros2();
+        return ResponseEntity.ok(carros);
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
