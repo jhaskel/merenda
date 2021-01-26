@@ -30,7 +30,8 @@ public class PedidoItens {
     private Long categoria;
     private Long fornecedor;
     private Boolean ischeck;
-    private String escolanome;
+    private String nivelnome;
+    private String fornecedornome;
 
 
 
