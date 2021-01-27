@@ -33,15 +33,10 @@ public class NivelEscolarController {
         return service.getRe(id);
     }
 
-
-
-
     @PostMapping
 
     public ResponseEntity post(@RequestBody NivelEscolar nivelEscolar) {
-
         NivelEscolarDTO c = service.insert(nivelEscolar);
-
         URI location = getUri(c.getId());
         return ResponseEntity.created(location).body(c);
     }
@@ -53,11 +48,8 @@ public class NivelEscolarController {
 
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody NivelEscolar nivelEscolar) {
-
         nivelEscolar.setId(id);
-
         NivelEscolarDTO c = service.update(nivelEscolar, id);
-
         return c != null ?
                 ResponseEntity.ok(c) :
                 ResponseEntity.notFound().build();
@@ -66,7 +58,6 @@ public class NivelEscolarController {
     @DeleteMapping("/{id}")
     public ResponseEntity delete(@PathVariable("id") Long id) {
         service.delete(id);
-
         return ResponseEntity.ok().build();
     }
 }

@@ -46,10 +46,7 @@ public class NivelEscolarService {
             // Copiar as propriedades
             db.setNome(nivelEscolar.getNome());
             System.out.println("Nivel id " + db.getId());
-
-            // Atualiza o carro
             rep.save(db);
-
             return NivelEscolarDTO.create(db);
         } else {
             return null;
