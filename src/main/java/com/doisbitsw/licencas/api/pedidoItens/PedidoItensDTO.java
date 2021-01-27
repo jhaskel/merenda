@@ -20,6 +20,7 @@ public class PedidoItensDTO {
     private Long categoria;
     private Long fornecedor;
     private Boolean ischeck;
+    private Boolean isautorizado;
 
 
     public static PedidoItensDTO create(PedidoItens pedidoItens) {
