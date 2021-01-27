@@ -21,7 +21,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     List<PedidoItens> findByPedido(String pedido);
 
 
-    @Query(value = "SELECT * FROM pedido_itens WHERE af = :af  GROUP BY af;", nativeQuery = true)
+    @Query(value = "SELECT * FROM pedido_itens WHERE af = :af;", nativeQuery = true)
     List<PedidoItens> findByAf(Long af);
 
 }
