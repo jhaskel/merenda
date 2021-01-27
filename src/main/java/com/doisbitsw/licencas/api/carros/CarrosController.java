@@ -53,12 +53,12 @@ public class CarrosController {
                 .buildAndExpand(id).toUri();
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Carro carro) {
+    @PutMapping("/{tipo}")
+    public ResponseEntity put(@PathVariable("tipo") String tipo, @RequestBody Carro carro) {
 
-        carro.setId(id);
+        carro.setTipo(tipo);
 
-        CarroDTO c = service.update(carro, id);
+        CarroDTO c = service.update(carro, tipo);
 
         return c != null ?
                 ResponseEntity.ok(c) :

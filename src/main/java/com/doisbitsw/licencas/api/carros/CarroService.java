@@ -34,13 +34,13 @@ public class CarroService {
         return CarroDTO.create(rep.save(carro));
     }
 
-    public CarroDTO update(Carro carro, Long id) {
-        Assert.notNull(id,"Não foi possível atualizar o registro");
+    public CarroDTO update(Carro carro, String tipo) {
+        Assert.notNull(tipo,"Não foi possível atualizar o registro");
 
         // Busca o carro no banco de dados
-        Optional<Carro> optional = rep.findById(id);
-        if(optional.isPresent()) {
-            Carro db = optional.get();
+        List<Carro> optional = rep.findByTipo(tipo);
+        if(optional.contains(tipo)) {
+            Carro db = optional.get(1);
             // Copiar as propriedades
             db.setNome(carro.getNome());
             db.setTipo(carro.getTipo());
