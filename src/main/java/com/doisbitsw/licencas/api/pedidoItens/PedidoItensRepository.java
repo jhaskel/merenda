@@ -22,4 +22,6 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
 
 
 
+    List<PedidoItens> findByAf(Long af);
+
 }
