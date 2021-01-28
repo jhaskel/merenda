@@ -36,6 +36,11 @@ public class PedidoItensService {
     }
 
 
+    public List<PedidoItensDTO> getCarrosByPedidoAll(String pedido) {
+        return rep.findByPedidoAll(pedido).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
+    }
+
+
     public List<PedidoItensDTO> getCarrosByAf(Long af) {
         return rep.findByAf(af).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
     }

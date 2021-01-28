@@ -40,6 +40,14 @@ public class PedidoItensController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/pedidoall/{pedido}")
+    public ResponseEntity getCarrosByPedidoAll(@PathVariable("pedido") String pedido) {
+        List<PedidoItensDTO> carros = service.getCarrosByPedidoAll(pedido);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
 
 
     @GetMapping("/af/{af}")
