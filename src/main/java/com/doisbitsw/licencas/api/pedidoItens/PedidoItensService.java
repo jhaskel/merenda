@@ -25,6 +25,11 @@ public class PedidoItensService {
         return list;
     }
 
+    public List<PedidoItensDTO> getCarros3() {
+        List<PedidoItensDTO> list = rep.findAll3().stream().map(PedidoItensDTO::create).collect(Collectors.toList());
+        return list;
+    }
+
     public PedidoItensDTO getCarroById(Long id) {
         Optional<PedidoItens> carro = rep.findById(id);
         return carro.map(PedidoItensDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));

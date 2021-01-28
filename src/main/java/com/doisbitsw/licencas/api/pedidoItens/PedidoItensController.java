@@ -26,6 +26,12 @@ public class PedidoItensController {
         return ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/pedidos")
+    public ResponseEntity get3() {
+        List<PedidoItensDTO> carros = service.getCarros3();
+        return ResponseEntity.ok(carros);
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity get(@PathVariable("id") Long id) {
         PedidoItensDTO carro = service.getCarroById(id);
@@ -39,6 +45,7 @@ public class PedidoItensController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
+
 
     @GetMapping("/pedidoall/{pedido}")
     public ResponseEntity getCarrosByPedidoAll(@PathVariable("pedido") String pedido) {
