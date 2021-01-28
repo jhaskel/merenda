@@ -26,6 +26,7 @@ public class PedidoItensDTO {
     private Boolean ischeck;
     private Boolean isautorizado;
     private Boolean isagro;
+    private String status;
 
 
     public static PedidoItensDTO create(PedidoItens pedidoItens) {

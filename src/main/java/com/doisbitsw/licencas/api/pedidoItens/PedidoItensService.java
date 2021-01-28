@@ -68,7 +68,6 @@ public class PedidoItensService {
             db.setNivel(pedidoItens.getNivel());
             db.setEscola(pedidoItens.getEscola());
             db.setProduto(pedidoItens.getProduto());
-            db.setProduto(pedidoItens.getProduto());
             db.setObs(pedidoItens.getObs());
             db.setQuantidade(pedidoItens.getQuantidade());
             db.setValor(pedidoItens.getValor());
@@ -76,6 +75,12 @@ public class PedidoItensService {
             db.setCreated(pedidoItens.getCreated());
             db.setFornecedor(pedidoItens.getFornecedor());
             db.setCategoria(pedidoItens.getCategoria());
+            db.setStatus(pedidoItens.getStatus());
+            db.setAno(pedidoItens.getAno());
+            db.setNomeescola(pedidoItens.getNomeescola());
+            db.setNomenivel(pedidoItens.getNomenivel());
+            db.setIsagro(pedidoItens.getIsagro());
+            db.setIsautorizado(pedidoItens.getIsautorizado());
 
             System.out.println("Carro id " + db.getId());
 
