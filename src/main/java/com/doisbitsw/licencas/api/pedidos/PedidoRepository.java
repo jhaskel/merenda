@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PedidoRepository extends JpaRepository<Pedido, Long> {
 
-    @Query(value = "SELECT *  FROM pedido WHERE code = :code;", nativeQuery = true)
+    @Query(value = "SELECT *  FROM pedido ;", nativeQuery = true)
     List<Pedido> findByCode(String code);
 
 }
