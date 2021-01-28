@@ -61,26 +61,28 @@ public class PedidoItensService {
         if(optional.isPresent()) {
             PedidoItens db = optional.get();
             // Copiar as propriedades
-            db.setAlias(pedidoItens.getAlias());
-            db.setPedido(pedidoItens.getPedido());
-            db.setAf(pedidoItens.getAf());
-            db.setIscheck(pedidoItens.getIscheck());
-            db.setNivel(pedidoItens.getNivel());
             db.setEscola(pedidoItens.getEscola());
             db.setProduto(pedidoItens.getProduto());
+            db.setCategoria(pedidoItens.getCategoria());
+            db.setNivel(pedidoItens.getNivel());
+            db.setFornecedor(pedidoItens.getFornecedor());
+            db.setAno(pedidoItens.getAno());
+            db.setAf(pedidoItens.getAf());
+
+            db.setPedido(pedidoItens.getPedido());
+            db.setAlias(pedidoItens.getAlias());
             db.setObs(pedidoItens.getObs());
+            db.setStatus(pedidoItens.getStatus());
+            db.setCreated(pedidoItens.getCreated());
+            db.setNomeescola(pedidoItens.getNomeescola());
+            db.setNomenivel(pedidoItens.getNomenivel());
+            db.setUnidade(pedidoItens.getUnidade());
             db.setQuantidade(pedidoItens.getQuantidade());
             db.setValor(pedidoItens.getValor());
             db.setTotal(pedidoItens.getTotal());
-            db.setCreated(pedidoItens.getCreated());
-            db.setFornecedor(pedidoItens.getFornecedor());
-            db.setCategoria(pedidoItens.getCategoria());
-            db.setStatus(pedidoItens.getStatus());
-            db.setAno(pedidoItens.getAno());
-            db.setNomeescola(pedidoItens.getNomeescola());
-            db.setNomenivel(pedidoItens.getNomenivel());
             db.setIsagro(pedidoItens.getIsagro());
             db.setIsautorizado(pedidoItens.getIsautorizado());
+            db.setIscheck(pedidoItens.getIscheck());
 
             System.out.println("Carro id " + db.getId());
 
