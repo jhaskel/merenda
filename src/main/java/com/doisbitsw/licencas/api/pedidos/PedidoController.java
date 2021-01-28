@@ -27,9 +27,9 @@ public class PedidoController {
 
         return ResponseEntity.ok(carro);
     }
-    @GetMapping("/pedido/{pedido}")
-    public ResponseEntity getCarrosByPedido(@PathVariable("pedido") String pedido) {
-        List<PedidoDTO> carros = service.getCarrosByPedido(pedido);
+    @GetMapping("/code/{code}")
+    public ResponseEntity getCarrosByCode(@PathVariable("code") String code) {
+        List<PedidoDTO> carros = service.getCarrosByCode(code);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
