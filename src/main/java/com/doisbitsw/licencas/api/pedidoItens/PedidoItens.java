@@ -21,6 +21,8 @@ public class PedidoItens {
     private Long nivel;
     private Long produto;
     private String alias;
+    private String nomeescola;
+    private String nomenivel;
     private Double quantidade;
     private Double valor;
     private Double total;
@@ -31,6 +33,7 @@ public class PedidoItens {
     private Long fornecedor;
     private Boolean ischeck;
     private Boolean isautorizado;
+
 
 
 

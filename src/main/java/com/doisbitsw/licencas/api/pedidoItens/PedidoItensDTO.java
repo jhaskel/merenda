@@ -11,6 +11,8 @@ public class PedidoItensDTO {
     private Long nivel;
     private Long produto;
     private String alias;
+    private String nomeescola;
+    private String nomenivel;
     private Double quantidade;
     private Double valor;
     private Double total;
