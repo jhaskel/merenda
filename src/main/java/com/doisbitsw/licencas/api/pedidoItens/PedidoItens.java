@@ -35,6 +35,7 @@ public class PedidoItens {
     private Long fornecedor;
     private Boolean ischeck;
     private Boolean isautorizado;
+    private Boolean isagro;
 
 
 

@@ -28,9 +28,11 @@ public class Cart {
     private String unidade;
     private String created;
     private Boolean ativo;
+    private Boolean isagro;
     private Long categoria;
     private Long fornecedor;
     private Long ano;
+
 
 
 
