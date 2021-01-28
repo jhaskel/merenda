@@ -25,6 +25,9 @@ public class PedidoService {
         return carro.map(PedidoDTO::create).orElseThrow(() -> new ObjectNotFoundException("Carro não encontrado"));
     }
 
+    public List<PedidoDTO> getCarrosByPedido(String pedido) {
+        return rep.findByPedido(pedido).stream().map(PedidoDTO::create).collect(Collectors.toList());
+    }
 
 
     public PedidoDTO insert(Pedido pedido) {
