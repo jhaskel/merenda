@@ -1,5 +1,6 @@
 package com.doisbitsw.licencas.api.pedidos;
 
+import com.doisbitsw.licencas.api.carros.CarroDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +28,7 @@ public class PedidoController {
 
         return ResponseEntity.ok(carro);
     }
+
     @GetMapping("/code/{code}")
     public ResponseEntity getCarrosByCode(@PathVariable("code") String code) {
         List<PedidoDTO> carros = service.getCarrosByCode(code);
