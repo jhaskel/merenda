@@ -30,6 +30,7 @@ public class Cart {
     private Boolean ativo;
     private Long categoria;
     private Long fornecedor;
+    private Long ano;
 
 
 

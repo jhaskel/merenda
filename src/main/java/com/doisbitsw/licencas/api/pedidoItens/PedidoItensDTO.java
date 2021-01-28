@@ -13,6 +13,7 @@ public class PedidoItensDTO {
     private String alias;
     private String nomeescola;
     private String nomenivel;
+    private Long ano;
     private Double quantidade;
     private Double valor;
     private Double total;

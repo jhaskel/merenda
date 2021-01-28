@@ -20,6 +20,7 @@ public class CartDTO {
     private Boolean ativo;
     private Long categoria;
     private Long fornecedor;
+    private Long ano;
 
     public static CartDTO create(Cart cart) {
         ModelMapper modelMapper = new ModelMapper();
