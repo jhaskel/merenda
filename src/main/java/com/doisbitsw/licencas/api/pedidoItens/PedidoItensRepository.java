@@ -26,5 +26,10 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     List<PedidoItens> findByPedidoAll(String pedido);
 
     List<PedidoItens> findByAf(Long af);
+    @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "\n" +
+            "WHERE af. ativo= true   and ite.escola = 2 AND ite.af > 0 ", nativeQuery = true)
+    double findSoma(Long usuario);
 
 }

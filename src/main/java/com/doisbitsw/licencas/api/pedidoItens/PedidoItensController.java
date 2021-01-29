@@ -65,6 +65,11 @@ public class PedidoItensController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/somaAll/{escola}")
+    public double getRep(@PathVariable("escola") Long escola) {
+        return service.getSoma(escola);
+    }
+
 
 
     @PostMapping

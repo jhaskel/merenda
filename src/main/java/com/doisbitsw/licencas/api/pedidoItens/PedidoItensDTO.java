@@ -28,6 +28,8 @@ public class PedidoItensDTO {
     private Boolean isagro;
     private String status;
 
+    private Double tot;
+
 
     public static PedidoItensDTO create(PedidoItens pedidoItens) {
         ModelMapper modelMapper = new ModelMapper();

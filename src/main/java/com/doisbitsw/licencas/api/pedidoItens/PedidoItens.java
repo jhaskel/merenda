@@ -38,6 +38,10 @@ public class PedidoItens {
     private Boolean isagro;
     private String status;
 
+    private Double tot;
+
+
+
 
 
 

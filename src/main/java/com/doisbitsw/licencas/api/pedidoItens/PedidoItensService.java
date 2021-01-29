@@ -51,6 +51,10 @@ public class PedidoItensService {
     }
 
 
+    public double getSoma(Long escola){
+        return rep.findSoma(escola);
+    }
+
 
 
     public PedidoItensDTO insert(PedidoItens pedidoItens) {
