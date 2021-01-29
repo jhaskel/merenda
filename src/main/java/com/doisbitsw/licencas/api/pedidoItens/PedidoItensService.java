@@ -73,7 +73,6 @@ public class PedidoItensService {
             db.setFornecedor(pedidoItens.getFornecedor());
             db.setAno(pedidoItens.getAno());
             db.setAf(pedidoItens.getAf());
-
             db.setPedido(pedidoItens.getPedido());
             db.setAlias(pedidoItens.getAlias());
             db.setObs(pedidoItens.getObs());
