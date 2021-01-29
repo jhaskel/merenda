@@ -23,7 +23,10 @@ public class Af {
     private String nomenivel;
     private String created;
     private Boolean isautorizado;
+    private Boolean ativo;
     private String status;
+
+
 
 
 
