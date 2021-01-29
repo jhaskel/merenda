@@ -47,10 +47,16 @@ public class UnidadeEscolarService {
         if(optional.isPresent()) {
             UnidadeEscolar db = optional.get();
             // Copiar as propriedades
+            db.setNivelescolar(unidadeEscolar.getNivelescolar());
             db.setNome(unidadeEscolar.getNome());
+            db.setAlias(unidadeEscolar.getAlias());
+            db.setEndereco(unidadeEscolar.getEndereco());
+            db.setBairro(unidadeEscolar.getBairro());
             db.setAlunos(unidadeEscolar.getAlunos());
+            db.setModified(unidadeEscolar.getModified());
+            db.setCreated(unidadeEscolar.getCreated());
+            db.setAtivo(unidadeEscolar.getAtivo());
             System.out.println("Nivel id " + db.getId());
-
             // Atualiza o carro
             rep.save(db);
 
