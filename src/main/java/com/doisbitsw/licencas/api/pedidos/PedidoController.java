@@ -37,6 +37,14 @@ public class PedidoController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/escola/{escola}")
+    public ResponseEntity getCarrosByEscola(@PathVariable("escola") Long escola) {
+        List<PedidoDTO> carros = service.getCarrosByEscola(escola);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
 
 
 

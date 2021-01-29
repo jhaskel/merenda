@@ -31,6 +31,11 @@ public class PedidoService {
         return rep.findByCode(code).stream().map(PedidoDTO::create).collect(Collectors.toList());
     }
 
+
+    public List<PedidoDTO> getCarrosByEscola(Long escola) {
+        return rep.findByEscola(escola).stream().map(PedidoDTO::create).collect(Collectors.toList());
+    }
+
     public PedidoDTO insert(Pedido pedido) {
         Assert.isNull(pedido.getId(),"Não foi possível inserir o registro");
         return PedidoDTO.create(rep.save(pedido));
