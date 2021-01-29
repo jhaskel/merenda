@@ -47,8 +47,22 @@ public class ProdutoService {
         if(optional.isPresent()) {
             Produto db = optional.get();
             // Copiar as propriedades
+            db.setCode(produto.getCode());
             db.setNome(produto.getNome());
             db.setAlias(produto.getAlias());
+            db.setUnidade(produto.getUnidade());
+            db.setCategoria(produto.getCategoria());
+            db.setFornecedor(produto.getFornecedor());
+            db.setImage(produto.getImage());
+            db.setQuantidade(produto.getQuantidade());
+            db.setEstoque(produto.getEstoque());
+            db.setAgrofamiliar(produto.getAgrofamiliar());
+            db.setAno(produto.getAno());
+            db.setCreated(produto.getCreated());
+            db.setModified(produto.getModified());
+            db.setEscolas(produto.getEscolas());
+            db.setAtivo(produto.getAtivo());
+
             System.out.println("Carro id " + db.getId());
 
             // Atualiza o carro
