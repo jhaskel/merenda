@@ -16,7 +16,7 @@ public class Af {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String code;
+    private Long code;
     private Long fornecedor;
     private String nomefornecedor;
     private Long nivel;
