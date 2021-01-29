@@ -51,6 +51,7 @@ public class AfService {
             db.setCreated(af.getCreated());
             db.setIsautorizado(af.getIsautorizado());
             db.setStatus(af.getStatus());
+            db.setEscola(af.getEscola());
 
             System.out.println("Carro id " + db.getId());
 

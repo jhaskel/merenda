@@ -8,6 +8,7 @@ public class AfDTO {
     private Long id;
     private Long code;
     private Long fornecedor;
+    private Long escola;
     private String nomefornecedor;
     private Long nivel;
     private String nomenivel;
