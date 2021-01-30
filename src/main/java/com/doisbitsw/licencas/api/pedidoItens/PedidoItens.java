@@ -38,7 +38,7 @@ public class PedidoItens {
     private Boolean isagro;
     private String status;
 
-    public Double tots;
+    protected Double tots;
 
 
 
