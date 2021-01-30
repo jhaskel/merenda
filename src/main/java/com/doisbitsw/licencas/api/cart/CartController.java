@@ -38,6 +38,11 @@ public class CartController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/itensCart/{escola}")
+    public double getRep(@PathVariable("escola") Long escola) {
+        return service.getSoma(escola);
+    }
+
 
 
     @PostMapping

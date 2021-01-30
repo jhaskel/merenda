@@ -31,6 +31,12 @@ public class CartService {
     }
 
 
+    public double getSoma(Long escola){
+        return rep.findSoma(escola);
+    }
+
+
+
 
     public CartDTO insert(Cart cart) {
         Assert.isNull(cart.getId(),"Não foi possível inserir o registro");
