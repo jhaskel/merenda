@@ -29,6 +29,7 @@ public class PedidoItensDTO {
     private String status;
 
     private Double tot;
+    private Double totAgro;
 
 
     public static PedidoItensDTO create(PedidoItens pedidoItens) {

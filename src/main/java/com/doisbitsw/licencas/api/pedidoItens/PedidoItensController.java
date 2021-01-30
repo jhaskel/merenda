@@ -69,6 +69,10 @@ public class PedidoItensController {
     public double getRep(@PathVariable("escola") Long escola) {
         return service.getSoma(escola);
     }
+    @GetMapping("/somaAgro/{escola}")
+    public double getRepAgro(@PathVariable("escola") Long escola) {
+        return service.getSomaAgro(escola);
+    }
 
 
 

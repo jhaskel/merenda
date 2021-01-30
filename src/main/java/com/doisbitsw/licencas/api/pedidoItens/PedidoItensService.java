@@ -57,6 +57,12 @@ public class PedidoItensService {
 
 
 
+    public double getSomaAgro(Long escola){
+        return rep.findSomaAgro(escola);
+    }
+
+
+
     public PedidoItensDTO insert(PedidoItens pedidoItens) {
         Assert.isNull(pedidoItens.getId(),"Não foi possível inserir o registro");
         return PedidoItensDTO.create(rep.save(pedidoItens));
