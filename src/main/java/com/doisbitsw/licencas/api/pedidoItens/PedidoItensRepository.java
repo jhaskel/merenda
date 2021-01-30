@@ -27,7 +27,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
 
     List<PedidoItens> findByAf(Long af);
 
-    @Query(value = "SSELECT ite.* FROM pedido_itens ite\n" +
+    @Query(value = "SELECT ite.* FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             " WHERE ite.escola = :escola and af > 0 AND af.ativo = true", nativeQuery = true)
     List<PedidoItens> findByEscola(Long escola);
