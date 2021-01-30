@@ -26,6 +26,10 @@ public class PnaeService {
     }
 
 
+    public double getSoma(Long ano){
+        return rep.findSoma(ano);
+    }
+
 
 
     public PnaeDTO insert(Pnae pnae) {

@@ -10,6 +10,8 @@ public class PnaeDTO {
     private String created;
     private Long ano;
     private Long cidade;
+    //
+    private Double soma;
 
     public static PnaeDTO create(Pnae pnae) {
         ModelMapper modelMapper = new ModelMapper();
