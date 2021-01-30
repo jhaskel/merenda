@@ -30,6 +30,7 @@ public class PedidoItensDTO {
 
     private Double tot;
     private Double totAgro;
+    private Double tots;
 
 
     public static PedidoItensDTO create(PedidoItens pedidoItens) {
