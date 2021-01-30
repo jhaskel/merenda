@@ -38,8 +38,8 @@ public class PedidoItens {
     private Boolean isautorizado;
     private Boolean isagro;
     private String status;
-    @Parent
-    private Double tots;
+
+
 
 
 
