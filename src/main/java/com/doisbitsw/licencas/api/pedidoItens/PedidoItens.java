@@ -2,6 +2,7 @@ package com.doisbitsw.licencas.api.pedidoItens;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Parent;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -37,8 +38,8 @@ public class PedidoItens {
     private Boolean isautorizado;
     private Boolean isagro;
     private String status;
-
-    protected Double tots;
+    @Parent
+    private Double tots;
 
 
 
