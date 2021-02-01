@@ -27,6 +27,7 @@ public class PedidoItensDTO {
     private Boolean isautorizado;
     private Boolean isagro;
     private String status;
+    private String mes;
 
     private Double tot;
     private Double totAgro;

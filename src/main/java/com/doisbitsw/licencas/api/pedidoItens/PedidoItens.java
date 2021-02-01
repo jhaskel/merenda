@@ -38,6 +38,7 @@ public class PedidoItens {
     private Boolean isautorizado;
     private Boolean isagro;
     private String status;
+    private String mes;
 
 }
 
