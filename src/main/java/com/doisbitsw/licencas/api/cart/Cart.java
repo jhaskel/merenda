@@ -32,6 +32,7 @@ public class Cart {
     private Long categoria;
     private Long fornecedor;
     private Long ano;
+    private String image;
 
 
 
