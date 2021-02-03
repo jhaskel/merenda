@@ -66,6 +66,10 @@ public class PedidoItensService {
         return rep.findSomaAgro(escola);
     }
 
+    public double getTotalPedido(String pedido){
+        return rep.findTotalPedido(pedido);
+    }
+
 
 
     public PedidoItensDTO insert(PedidoItens pedidoItens) {

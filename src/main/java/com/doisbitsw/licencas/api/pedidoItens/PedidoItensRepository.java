@@ -44,4 +44,9 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
             "WHERE af. ativo= true   and ite.escola = :escola AND ite.af > 0 AND ite.isagro = true", nativeQuery = true)
     double findSomaAgro(Long escola);
 
+    @Query(value = "SELECT sum(ite.total) as totalPedido  FROM pedido_itens ite \n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "WHERE af. ativo= true   and ite.pedido = :pedido AND ite.af > 0 ", nativeQuery = true)
+    double findTotalPedido(String pedido);
+
 }

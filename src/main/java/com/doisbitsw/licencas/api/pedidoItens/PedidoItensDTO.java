@@ -32,6 +32,7 @@ public class PedidoItensDTO {
     private Double tot;
     private Double totAgro;
     private Double tots;
+    private Double totalPedido;
 
 
     public static PedidoItensDTO create(PedidoItens pedidoItens) {
