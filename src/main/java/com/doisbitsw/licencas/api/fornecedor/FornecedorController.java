@@ -29,6 +29,15 @@ public class FornecedorController {
     }
 
 
+    @GetMapping("/id/{id}")
+    public ResponseEntity getFornecId(@PathVariable("id") Long id) {
+        List<FornecedorDTO> carros = service.getFornecId(id);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
+
 
 
     @PostMapping

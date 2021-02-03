@@ -31,6 +31,11 @@ public class FornecedorService {
         return FornecedorDTO.create(rep.save(fornecedor));
     }
 
+
+    public List<FornecedorDTO> getFornecId(Long id) {
+        return rep.findId(id).stream().map(FornecedorDTO::create).collect(Collectors.toList());
+    }
+
     public FornecedorDTO update(Fornecedor fornecedor, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
 
