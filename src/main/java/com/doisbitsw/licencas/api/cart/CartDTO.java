@@ -23,6 +23,7 @@ public class CartDTO {
     private Long fornecedor;
     private Long ano;
     private String image;
+    private String cod;
 
     public static CartDTO create(Cart cart) {
         ModelMapper modelMapper = new ModelMapper();

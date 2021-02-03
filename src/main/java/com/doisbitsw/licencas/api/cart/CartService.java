@@ -55,6 +55,7 @@ public class CartService {
             db.setQuantidade(cart.getQuantidade());
             db.setValor(cart.getValor());
             db.setTotal(cart.getTotal());
+            db.setCod(cart.getCod());
             System.out.println("Carro id " + db.getId());
 
             // Atualiza o carro

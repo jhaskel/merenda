@@ -107,6 +107,7 @@ public class PedidoItensService {
             db.setIsautorizado(pedidoItens.getIsautorizado());
             db.setIscheck(pedidoItens.getIscheck());
             db.setCod(pedidoItens.getCod());
+            db.setMes(pedidoItens.getMes());
 
             System.out.println("Carro id " + db.getId());
 
