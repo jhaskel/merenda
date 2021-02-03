@@ -54,6 +54,7 @@ public class PedidoService {
             db.setIscheck(pedido.getIscheck());
             db.setStatus(pedido.getStatus());
             db.setIsaf(pedido.getIsaf());
+            db.setTotal(pedido.getTotal());
             System.out.println("Carro id " + db.getId());
 
             // Atualiza o carro
