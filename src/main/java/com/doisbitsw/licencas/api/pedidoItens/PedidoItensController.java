@@ -72,6 +72,15 @@ public class PedidoItensController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
+    @GetMapping("/somaTudo/{ano}")
+    public double getRepSomaTudo(@PathVariable("ano") Long ano) {
+        return service.getSomaTudo(ano);
+    }
+
+    @GetMapping("/somaTudoAgro/{ano}")
+    public double getRepSomaAgro(@PathVariable("ano") Long ano) {
+        return service.getSomaTudoAgro(ano);
+    }
 
     @GetMapping("/somaAll/{escola}")
     public double getRep(@PathVariable("escola") Long escola) {
