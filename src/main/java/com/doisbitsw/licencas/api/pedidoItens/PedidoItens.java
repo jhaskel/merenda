@@ -17,6 +17,7 @@ public class PedidoItens {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String cod;
     private String pedido;
     private Long escola;
     private Long nivel;

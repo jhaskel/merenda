@@ -106,6 +106,7 @@ public class PedidoItensService {
             db.setIsagro(pedidoItens.getIsagro());
             db.setIsautorizado(pedidoItens.getIsautorizado());
             db.setIscheck(pedidoItens.getIscheck());
+            db.setCod(pedidoItens.getCod());
 
             System.out.println("Carro id " + db.getId());
 
