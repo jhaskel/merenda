@@ -40,6 +40,7 @@ public class PedidoItens {
     private Boolean isagro;
     private String status;
     private String mes;
+    private Double totAgro;
 
 }
 
