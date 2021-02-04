@@ -56,6 +56,11 @@ public class PedidoItensService {
     }
 
 
+    public List<PedidoItensDTO> getItensAno(Long ano) {
+        return rep.findItensAno(ano).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
+    }
+
+
     public double getSomaTudo(Long ano){
         return rep.findSomaTudo(ano);
     }

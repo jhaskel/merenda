@@ -72,6 +72,15 @@ public class PedidoItensController {
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
     }
+
+    @GetMapping("/ano/{ano}")
+    public ResponseEntity getItensAno(@PathVariable("ano") Long ano) {
+        List<PedidoItensDTO> carros = service.getItensAno(ano);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
     @GetMapping("/somaTudo/{ano}")
     public double getRepSomaTudo(@PathVariable("ano") Long ano) {
         return service.getSomaTudo(ano);
