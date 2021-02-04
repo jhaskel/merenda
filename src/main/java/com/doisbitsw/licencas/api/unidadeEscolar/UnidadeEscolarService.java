@@ -31,9 +31,6 @@ public class UnidadeEscolarService {
     }
 
 
-
-
-
     public UnidadeEscolarDTO insert(UnidadeEscolar unidadeEscolar) {
         Assert.isNull(unidadeEscolar.getId(),"Não foi possível inserir o registro");
         return UnidadeEscolarDTO.create(rep.save(unidadeEscolar));
