@@ -27,11 +27,16 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
 
     List<PedidoItens> findByAf(Long af);
 
-    @Query(value = "SELECT *, sum(ite.total) as totalAgro FROM pedido_itens ite \n" +
-            "            INNER JOIN af ON af.code = ite.af          \n" +
-            "            WHERE af. ativo= true   and ite.ano = 2021 AND ite.af > 0 GROUP BY ite.escola\n" +
+    @Query(value = "SELECT ite.* FROM pedido_itens ite\n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            " WHERE ite.escola = :escola and af > 0 AND af.ativo = TRUE \n" +
             " ", nativeQuery = true)
     List<PedidoItens> findByEscola(Long escola);
+
+    @Query(value = "SELECT sum(ite.total) as totalAgro FROM pedido_itens ite \n" +
+            "                   INNER JOIN af ON af.code = ite.af          \n" +
+            "                     WHERE af. ativo= true   and ite.ano = :ano AND ite.af > 0 GROUP BY ite.escola", nativeQuery = true)
+    List<PedidoItens> findEscolaAll(Long ano);
 
     @Query(value = "SELECT ite.* FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
