@@ -28,12 +28,15 @@ public class UnidadeEscolarController {
         return ResponseEntity.ok(carro);
     }
     @GetMapping("/id/{id}")
-
     public ResponseEntity getCarrosById(@PathVariable("id") Long id) {
         List<UnidadeEscolarDTO> carros = service.getCarrosById(id);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
+    }
+    @GetMapping("/quantidade")
+    public double getRep() {
+        return service.getQuantidade();
     }
 
 

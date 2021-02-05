@@ -30,11 +30,16 @@ public class UnidadeEscolarService {
         return rep.findCarroById(id).stream().map(UnidadeEscolarDTO::create).collect(Collectors.toList());
     }
 
+    public double getQuantidade(){
+        return rep.findQuantidade();
+    }
+
 
     public UnidadeEscolarDTO insert(UnidadeEscolar unidadeEscolar) {
         Assert.isNull(unidadeEscolar.getId(),"Não foi possível inserir o registro");
         return UnidadeEscolarDTO.create(rep.save(unidadeEscolar));
     }
+
 
     public UnidadeEscolarDTO update(UnidadeEscolar unidadeEscolar, Long id) {
         Assert.notNull(id,"Não foi possível atualizar o registro");
