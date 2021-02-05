@@ -16,6 +16,8 @@ public class UnidadeEscolarDTO {
     private String created;
     private String modified;
 
+    private Double quant;
+
     public static UnidadeEscolarDTO create(UnidadeEscolar unidadeEscolar) {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(unidadeEscolar, UnidadeEscolarDTO.class);
