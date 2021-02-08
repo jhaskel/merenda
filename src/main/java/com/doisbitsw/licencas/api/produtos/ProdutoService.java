@@ -34,6 +34,11 @@ public class ProdutoService {
         return rep.findByEcola(escola).stream().map(ProdutoDTO::create).collect(Collectors.toList());
     }
 
+
+    public List<ProdutoDTO> getMenos() {
+        return rep.findMenos().stream().map(ProdutoDTO::create).collect(Collectors.toList());
+    }
+
     public ProdutoDTO insert(Produto produto) {
         Assert.isNull(produto.getId(),"Não foi possível inserir o registro");
         return ProdutoDTO.create(rep.save(produto));

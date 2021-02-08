@@ -44,6 +44,14 @@ public class ProdutoController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/menos")
+    public ResponseEntity getMenos() {
+        List<ProdutoDTO> carros = service.getMenos();
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
 
     @PostMapping
 
