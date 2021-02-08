@@ -54,7 +54,7 @@ public class AfService {
             db.setAtivo(af.getAtivo());
 
 
-            System.out.println("Carro id " + db.getId());
+            System.out.println("Af id " + db.getId());
 
             // Atualiza o carro
             rep.save(db);

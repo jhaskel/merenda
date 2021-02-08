@@ -114,6 +114,11 @@ public class PedidoItensController {
         return service.getTotalPedido(pedido);
     }
 
+    @GetMapping("/totalAf/{af}/{ano")
+    public double getTotalAf(@PathVariable("af") Long af,@PathVariable("ano") Long ano) {
+        return service.getTotalAf(af,ano);
+    }
+
 
 
     @PostMapping
