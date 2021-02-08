@@ -15,6 +15,7 @@ public class AfDTO {
     private Boolean isautorizado;
     private String status;
     private Boolean ativo;
+    private String pedido;
 
     public static AfDTO create(Af af) {
         ModelMapper modelMapper = new ModelMapper();
