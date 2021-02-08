@@ -91,8 +91,8 @@ public class PedidoItensService {
         return rep.findTotalPedido(pedido);
     }
 
-    public double getTotalAf(Long af, Long ano){
-        return rep.findTotalAf(af,ano);
+    public double getTotalAf(Long af){
+        return rep.findTotalAf(af);
     }
 
 
