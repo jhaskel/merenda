@@ -18,7 +18,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long> {
 
 
     @Query(value = "SELECT * FROM produto p\n" +
-            "WHERE p.ativo = true and p.id NOT IN (SELECT produto FROM pedido_itens )", nativeQuery = true)
+            "WHERE p.ativo = true and p.id NOT IN (SELECT produto FROM pedido_itens ) ORDER BY p.categoria,p.nome", nativeQuery = true)
     List<Produto> findMenos();
 
     @Query(value = "select * from produto  where ativo = TRUE order by id desc ", nativeQuery = true)
