@@ -26,6 +26,7 @@ public class Af {
     private Boolean ativo;
     private String status;
     private String pedido;
+    private Double total;
 
 
 

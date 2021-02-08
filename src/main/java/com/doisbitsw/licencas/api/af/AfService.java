@@ -52,6 +52,8 @@ public class AfService {
             db.setIsautorizado(af.getIsautorizado());
             db.setStatus(af.getStatus());
             db.setAtivo(af.getAtivo());
+            db.setPedido(af.getPedido());
+            db.setTotal(af.getTotal());
 
 
             System.out.println("Af id " + db.getId());

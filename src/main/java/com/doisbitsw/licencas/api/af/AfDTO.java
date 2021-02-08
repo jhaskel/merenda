@@ -16,6 +16,8 @@ public class AfDTO {
     private String status;
     private Boolean ativo;
     private String pedido;
+    private Double total;
+
 
     public static AfDTO create(Af af) {
         ModelMapper modelMapper = new ModelMapper();
