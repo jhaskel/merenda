@@ -25,6 +25,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     @Query(value = "SELECT * FROM pedido_itens WHERE pedido = :pedido ;", nativeQuery = true)
     List<PedidoItens> findByPedidoAll(String pedido);
 
+    @Query(value = "SELECT * FROM pedido_itens WHERE af = :af ;", nativeQuery = true)
     List<PedidoItens> findByAf(Long af);
 
     @Query(value = "SELECT ite.* FROM pedido_itens ite\n" +
