@@ -30,6 +30,14 @@ public class AfController {
         return ResponseEntity.ok(carro);
     }
 
+    @GetMapping("/fornecedor/{fornecedor}")
+    public ResponseEntity getByFornecedor(@PathVariable("fornecedor") Long fornecedor) {
+        List<AfDTO> carros = service.getByFornecedor(fornecedor);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
 
 
     @PostMapping

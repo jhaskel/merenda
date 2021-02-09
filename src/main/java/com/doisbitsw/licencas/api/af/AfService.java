@@ -28,6 +28,11 @@ public class AfService {
     }
 
 
+    public List<AfDTO> getByFornecedor(Long fornecedor) {
+        return rep.findByFornecedor(fornecedor).stream().map(AfDTO::create).collect(Collectors.toList());
+    }
+
+
     public AfDTO insert(Af af) {
         Assert.isNull(af.getId(),"Não foi possível inserir o registro");
         return AfDTO.create(rep.save(af));
