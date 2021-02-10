@@ -36,6 +36,10 @@ public class PedidoService {
         return rep.findByEscola(escola).stream().map(PedidoDTO::create).collect(Collectors.toList());
     }
 
+    public long getCart(){
+        return rep.findCart();
+    }
+
     public PedidoDTO insert(Pedido pedido) {
         Assert.isNull(pedido.getId(),"Não foi possível inserir o registro");
         return PedidoDTO.create(rep.save(pedido));

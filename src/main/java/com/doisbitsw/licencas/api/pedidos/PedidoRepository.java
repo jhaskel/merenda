@@ -17,4 +17,7 @@ public interface PedidoRepository extends JpaRepository<Pedido, Long> {
     @Query(value = "SELECT *  FROM pedido where escola = :escola order by id desc;", nativeQuery = true)
     List<Pedido> findByEscola(Long escola);
 
+    @Query(value = "SELECT * FROM pedido WHERE ischeck = false", nativeQuery = true)
+    long findCart();
+
 }
