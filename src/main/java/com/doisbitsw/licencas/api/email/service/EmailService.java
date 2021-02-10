@@ -14,7 +14,6 @@ import javax.mail.MessagingException;
 public class EmailService {
 
 
-
 	private final JavaMailSender javaMailSender;
 
 	public EmailService(JavaMailSender javaMailSender) {
