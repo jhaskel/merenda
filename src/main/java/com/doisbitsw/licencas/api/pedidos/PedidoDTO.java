@@ -20,6 +20,8 @@ public class PedidoDTO {
     private Boolean ativo;
     private Boolean ischeck;
 
+    private Long totalCart;
+
     public static PedidoDTO create(Pedido pedido) {
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(pedido, PedidoDTO.class);
