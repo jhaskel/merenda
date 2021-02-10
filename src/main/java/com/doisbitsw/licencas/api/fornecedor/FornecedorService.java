@@ -46,13 +46,8 @@ public class FornecedorService {
             // Copiar as propriedades
             db.setNome(fornecedor.getNome());
             db.setCnpj(fornecedor.getCnpj());
-            db.setEndereco(fornecedor.getEndereco());
-            db.setBairro(fornecedor.getBairro());
-            db.setCidade(fornecedor.getCidade());
-            db.setCelular(fornecedor.getCelular());
+            db.setAlias(fornecedor.getAlias());
             db.setEmail(fornecedor.getEmail());
-            db.setCreated(fornecedor.getCreated());
-            db.setModified(fornecedor.getModified());
             db.setAtivo(fornecedor.getAtivo());
             System.out.println("Carro id " + db.getId());
 

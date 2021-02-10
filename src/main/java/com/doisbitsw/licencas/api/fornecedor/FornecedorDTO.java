@@ -7,15 +7,10 @@ import org.modelmapper.ModelMapper;
 public class FornecedorDTO {
     private Long id;
     private String nome;
+    private String alias;
     private String cnpj;
-    private String endereco;
-    private String bairro;
-    private String cidade;
     private String email;
-    private String celular;
     private Boolean ativo;
-    private String created;
-    private String modified;
 
     public static FornecedorDTO create(Fornecedor fornecedor) {
         ModelMapper modelMapper = new ModelMapper();
