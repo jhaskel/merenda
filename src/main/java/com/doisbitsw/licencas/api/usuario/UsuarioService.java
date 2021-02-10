@@ -54,10 +54,9 @@ public class UsuarioService {
 
             db.setNome(usuario.getNome());
             db.setSenha(usuario.getSenha());
-            db.setUrlFoto(usuario.getUrlFoto());
-           db.setCpf(usuario.getCpf());
+
            db.setEmail(usuario.getEmail());
-            db.setCelular(usuario.getCelular());
+
 
 
 

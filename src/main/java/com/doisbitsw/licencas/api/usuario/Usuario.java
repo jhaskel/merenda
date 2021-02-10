@@ -19,16 +19,13 @@ public class Usuario {
     private String email;
     private String login;
     private String senha;
-    private String urlFoto;
-    private String cpf;
+    private Long escola;
+    private String nivel;
     private String recuperar;
-    private String celular;
     private String role;
     private Boolean ativo;
     private String created;
     private String modified;
-    private String nivel;
-    private Long escola;
 
 
 
