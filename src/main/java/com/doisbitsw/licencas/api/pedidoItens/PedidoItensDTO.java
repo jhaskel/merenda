@@ -29,6 +29,7 @@ public class PedidoItensDTO {
     private Boolean isagro;
     private String status;
     private String mes;
+    private Boolean ativo;
 
     private Double tot;
     private Double totAgro;

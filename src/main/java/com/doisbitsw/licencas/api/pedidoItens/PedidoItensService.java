@@ -138,6 +138,7 @@ public class PedidoItensService {
             db.setIscheck(pedidoItens.getIscheck());
             db.setCod(pedidoItens.getCod());
             db.setMes(pedidoItens.getMes());
+            db.setAtivo(pedidoItens.getAtivo());
 
             System.out.println("Carro id " + db.getId());
 
