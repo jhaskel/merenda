@@ -18,6 +18,8 @@ public class AfDTO {
     private String pedido;
     private Double total;
 
+    private Long totalAf;
+
 
     public static AfDTO create(Af af) {
         ModelMapper modelMapper = new ModelMapper();

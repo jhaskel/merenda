@@ -31,6 +31,9 @@ public class AfService {
     public List<AfDTO> getByFornecedor(Long fornecedor) {
         return rep.findByFornecedor(fornecedor).stream().map(AfDTO::create).collect(Collectors.toList());
     }
+    public long getAf(){
+        return rep.findAf();
+    }
 
 
     public AfDTO insert(Af af) {

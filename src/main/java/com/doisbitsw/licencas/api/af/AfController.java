@@ -38,6 +38,12 @@ public class AfController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/af")
+    public long getAf() {
+        return service.getAf();
+    }
+
+
 
 
     @PostMapping
