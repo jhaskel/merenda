@@ -53,7 +53,7 @@ public class CarrosController {
                 .buildAndExpand(id).toUri();
     }
 
-    @PutMapping("/{id}")
+    @PutMapping()
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Carro carro) {
 
         carro.setId(id);
