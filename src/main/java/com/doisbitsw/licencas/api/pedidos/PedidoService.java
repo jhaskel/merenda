@@ -44,6 +44,10 @@ public class PedidoService {
         return rep.findUltimoId();
     }
 
+    public long getTemCart(Long escola){
+        return rep.findTemCart(escola);
+    }
+
 
     public PedidoDTO insert(Pedido pedido) {
         Assert.isNull(pedido.getId(),"Não foi possível inserir o registro");

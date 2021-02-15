@@ -21,9 +21,9 @@ public class PedidoDTO {
     private Boolean ischeck;
     private Boolean iscart;
 
-
-
     private Long totalCart;
+    private Long temCart;
+
 
     public static PedidoDTO create(Pedido pedido) {
         ModelMapper modelMapper = new ModelMapper();

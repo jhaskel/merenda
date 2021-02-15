@@ -73,6 +73,11 @@ public class PedidoController {
         return service.getUltimoId();
     }
 
+    @GetMapping("/temcart/escola")
+    public long getTemCart(@PathVariable("escola") Long escola) {
+        return service.getTemCart(escola);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Pedido pedido) {
         pedido.setId(id);
