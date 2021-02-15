@@ -40,6 +40,11 @@ public class PedidoService {
         return rep.findCart();
     }
 
+    public long getUltimoId(){
+        return rep.findUltimoId();
+    }
+
+
     public PedidoDTO insert(Pedido pedido) {
         Assert.isNull(pedido.getId(),"Não foi possível inserir o registro");
         return PedidoDTO.create(rep.save(pedido));

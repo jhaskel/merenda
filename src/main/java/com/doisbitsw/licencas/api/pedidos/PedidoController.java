@@ -68,6 +68,11 @@ public class PedidoController {
                 .buildAndExpand(id).toUri();
     }
 
+    @GetMapping("/ultimoid")
+    public long getUltimoId() {
+        return service.getUltimoId();
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Pedido pedido) {
         pedido.setId(id);
