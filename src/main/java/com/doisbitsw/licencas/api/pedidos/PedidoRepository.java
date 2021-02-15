@@ -24,7 +24,7 @@ public interface PedidoRepository extends JpaRepository<Pedido, Long> {
     long findUltimoId();
 
 
-    @Query(value = "SELECT id FROM pedido where escola = :escola and iscart = true", nativeQuery = true)
+    @Query(value = "SELECT id FROM pedido where escola = :escola and iscart = true limit 1", nativeQuery = true)
     long findTemCart(Long escola);
 
 }
