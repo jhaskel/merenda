@@ -29,6 +29,7 @@ public class Pedido {
     private String modified;
     private Boolean ativo;
     private Boolean ischeck;
+    private Boolean iscart;
 
 
 
