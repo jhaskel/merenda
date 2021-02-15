@@ -73,6 +73,7 @@ public class PedidoController {
         return service.getUltimoId();
     }
 
+
     @GetMapping("/temcart/escola")
     public long getTemCart(@PathVariable("escola") Long escola) {
         return service.getTemCart(escola);
