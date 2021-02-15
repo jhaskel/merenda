@@ -28,7 +28,7 @@ public interface PedidoRepository extends JpaRepository<Pedido, Long> {
     long findTemCart(Long escola);
 
 
-    @Query(value = "SELECT count(id) as FROM pedido where escola = :escola and iscart = true limit 1", nativeQuery = true)
+    @Query(value = "SELECT id FROM pedido where escola = :escola and iscart = true limit 1", nativeQuery = true)
     long findTemCart1(Long escola);
 
 }
