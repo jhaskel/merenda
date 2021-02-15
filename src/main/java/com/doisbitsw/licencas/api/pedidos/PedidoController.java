@@ -74,7 +74,7 @@ public class PedidoController {
     }
 
 
-    @GetMapping("/temcart/escola")
+    @GetMapping("/temcart/{escola}")
     public long getTemCart(@PathVariable("escola") Long escola) {
         return service.getTemCart(escola);
     }
