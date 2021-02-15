@@ -79,7 +79,7 @@ public class PedidoController {
         return service.getTemCart(escola);
     }
 
-    @GetMapping("/temcart/{escola}")
+    @GetMapping("/temcart1/{escola}")
     public long getTemCart1(@PathVariable("escola") Long escola) {
         return service.getTemCart1(escola);
     }
