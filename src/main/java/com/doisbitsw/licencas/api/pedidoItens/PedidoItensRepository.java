@@ -28,8 +28,8 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     @Query(value = "SELECT * FROM pedido_itens WHERE af = :af ;", nativeQuery = true)
     List<PedidoItens> findByAf(Long af);
 
-    @Query(value = "SELECT * FROM pedido_itens  WHERE escola = :escola  AND ano = :ano ", nativeQuery = true)
-    List<PedidoItens> findByEscola(Long escola, Long ano);
+    @Query(value = "SELECT * FROM pedido_itens  WHERE escola = :escola  AND pedido = :pedido ", nativeQuery = true)
+    List<PedidoItens> findByEscola(Long escola, Long pedido);
 
     @Query(value = "SELECT ite.* FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +

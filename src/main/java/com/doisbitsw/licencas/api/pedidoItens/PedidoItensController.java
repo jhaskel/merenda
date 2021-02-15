@@ -65,9 +65,9 @@ public class PedidoItensController {
                 ResponseEntity.ok(carros);
     }
 
-    @GetMapping("/escola/{escola}/{ano}")
-    public ResponseEntity getCarrosByEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
-        List<PedidoItensDTO> carros = service.getCarrosByEscola(escola,ano);
+    @GetMapping("/escola/{escola}/{pedido}")
+    public ResponseEntity getCarrosByEscola(@PathVariable("escola") Long escola,@PathVariable("pedido") Long pedido) {
+        List<PedidoItensDTO> carros = service.getCarrosByEscola(escola,pedido);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);
