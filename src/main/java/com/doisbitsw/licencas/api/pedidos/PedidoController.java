@@ -84,6 +84,14 @@ public class PedidoController {
         return service.getTemCart1(escola);
     }
 
+    @GetMapping("/id/{id}")
+    public ResponseEntity getCId(@PathVariable("id") Long id) {
+        List<PedidoDTO> carros = service.getId(id);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity put(@PathVariable("id") Long id, @RequestBody Pedido pedido) {
         pedido.setId(id);

@@ -54,6 +54,12 @@ public class PedidoService {
 
 
 
+    public List<PedidoDTO> getId(Long id) {
+        return rep.findId(id).stream().map(PedidoDTO::create).collect(Collectors.toList());
+    }
+
+
+
 
     public PedidoDTO insert(Pedido pedido) {
         Assert.isNull(pedido.getId(),"Não foi possível inserir o registro");
