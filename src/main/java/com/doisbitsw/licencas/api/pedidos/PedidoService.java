@@ -80,6 +80,7 @@ public class PedidoService {
             db.setStatus(pedido.getStatus());
             db.setIsaf(pedido.getIsaf());
             db.setTotal(pedido.getTotal());
+            db.setIscart(pedido.getIscart());
             System.out.println("Carro id " + db.getId());
 
             // Atualiza o carro
