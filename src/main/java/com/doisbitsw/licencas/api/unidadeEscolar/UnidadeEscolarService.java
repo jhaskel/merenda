@@ -30,9 +30,9 @@ public class UnidadeEscolarService {
         return rep.findCarroById(id).stream().map(UnidadeEscolarDTO::create).collect(Collectors.toList());
     }
 
-    public double getQuantidade(){
-        return rep.findQuantidade();
-    }
+    public long getQuantidade(){ return rep.findQuantidade(); }
+
+    public long getQuantAlunos(){ return rep.findQuantAlunos(); }
 
 
     public UnidadeEscolarDTO insert(UnidadeEscolar unidadeEscolar) {

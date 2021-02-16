@@ -35,8 +35,13 @@ public class UnidadeEscolarController {
                 ResponseEntity.ok(carros);
     }
     @GetMapping("/quantidade")
-    public double getRep() {
+    public long getQuantidade() {
         return service.getQuantidade();
+    }
+
+    @GetMapping("/quantAlunos")
+    public long getQuantAlunos() {
+        return service.getQuantAlunos();
     }
 
 
