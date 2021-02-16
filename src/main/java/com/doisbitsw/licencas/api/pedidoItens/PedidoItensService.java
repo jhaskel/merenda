@@ -56,6 +56,11 @@ public class PedidoItensService {
     }
 
 
+    public List<PedidoItensDTO> getEscolar(Long escola, Long ano) {
+        return rep.findEscolar(escola,ano).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
+    }
+
+
     public List<PedidoItensDTO> getByFornecedor(Long fornecedor) {
         return rep.findByFornecedor(fornecedor).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
     }
