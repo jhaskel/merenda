@@ -161,6 +161,12 @@ public class PedidoItensController {
     }
 
 
+    @GetMapping("/diversos/{ano}")
+    public double getDiversos(@PathVariable("ano") Long ano) {
+        return service.getDiversos(ano);
+    }
+
+
 
 
 

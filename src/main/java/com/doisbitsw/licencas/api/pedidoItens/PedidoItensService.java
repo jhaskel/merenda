@@ -127,6 +127,11 @@ public class PedidoItensService {
     }
 
 
+    public double getDiversos(Long ano){
+        return rep.findDiversos(ano);
+    }
+
+
 
     public PedidoItensDTO insert(PedidoItens pedidoItens) {
         Assert.isNull(pedidoItens.getId(),"Não foi possível inserir o registro");
