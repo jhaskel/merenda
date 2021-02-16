@@ -98,7 +98,25 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
             "\t\t\t\tAND (ite.categoria = 1 OR ite.categoria = 2 \n" +
             "OR ite.categoria = 3 \n" +
             "OR ite.categoria = 5\n" +
-            "OR ite.categoria = 6) ", nativeQuery = true)
-    double findTotalAlimentos(Long ano);
+            "OR ite.categoria = 6) AND ite.isagro = FALSE ", nativeQuery = true)
+    double findTradicional(Long ano);
+
+    @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
+            "            INNER JOIN af ON af.code = ite.af\n" +
+            "            WHERE af.ativo= true   and ite.ano = :ano AND ite.af > 0 \n" +
+            "\t\t\t\tAND (ite.categoria = 1 OR ite.categoria = 2 \n" +
+            "OR ite.categoria = 3 \n" +
+            "OR ite.categoria = 5\n" +
+            "OR ite.categoria = 6) AND ite.isagro = FALSE and ite.nivel = :nivel", nativeQuery = true)
+    double findTradicionalNivel(Long nivel,Long ano);
+
+    @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
+            "            INNER JOIN af ON af.code = ite.af\n" +
+            "            WHERE af.ativo= true   and ite.ano = :ano AND ite.af > 0 \n" +
+            "\t\t\t\tAND (ite.categoria = 1 OR ite.categoria = 2 \n" +
+            "OR ite.categoria = 3 \n" +
+            "OR ite.categoria = 5\n" +
+            "OR ite.categoria = 6) AND ite.isagro = FALSE and ite.escola = :escola", nativeQuery = true)
+    double findTradicionalEscola(Long escola,Long ano);
 
 }

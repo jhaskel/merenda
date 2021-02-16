@@ -143,9 +143,21 @@ public class PedidoItensController {
     }
 
 
-    @GetMapping("/totalAlimentos/{ano}")
-    public double getTotalAlimentos(@PathVariable("ano") Long ano) {
-        return service.getTotalAlimentos(ano);
+    @GetMapping("/tradicional/{ano}")
+    public double getTradicional(@PathVariable("ano") Long ano) {
+        return service.getTradicional(ano);
+    }
+
+
+    @GetMapping("/tradicionalNivel/{nivel}/{ano}")
+    public double getTradicionalNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {
+        return service.getTradicionalNivel(nivel,ano);
+    }
+
+
+    @GetMapping("/tradicionalEscola/{escola}/{ano}")
+    public double getTradicionalEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
+        return service.getTradicionalEscola(escola,ano);
     }
 
 

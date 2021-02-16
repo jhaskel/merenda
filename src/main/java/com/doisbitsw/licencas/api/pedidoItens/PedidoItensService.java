@@ -112,8 +112,18 @@ public class PedidoItensService {
         return rep.findTotalAf(af);
     }
 
-    public double getTotalAlimentos(Long ano){
-        return rep.findTotalAlimentos(ano);
+    public double getTradicional(Long ano){
+        return rep.findTradicional(ano);
+    }
+
+
+    public double getTradicionalNivel(Long nivel,Long ano){
+        return rep.findTradicionalNivel(nivel,ano);
+    }
+
+
+    public double getTradicionalEscola(Long escola,Long ano){
+        return rep.findTradicionalEscola(escola,ano);
     }
 
 
