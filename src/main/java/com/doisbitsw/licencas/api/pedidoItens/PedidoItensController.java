@@ -133,6 +133,15 @@ public class PedidoItensController {
     }
 
 
+    @GetMapping("/totalAlimentos/{ano}")
+    public double getTotalAlimentos(@PathVariable("ano") Long ano) {
+        return service.getTotalAlimentos(ano);
+    }
+
+
+
+
+
 
     @PostMapping
     public ResponseEntity post(@RequestBody PedidoItens pedidoItens) {

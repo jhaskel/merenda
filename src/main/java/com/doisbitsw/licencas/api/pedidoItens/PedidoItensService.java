@@ -103,6 +103,10 @@ public class PedidoItensService {
         return rep.findTotalAf(af);
     }
 
+    public double getTotalAlimentos(Long ano){
+        return rep.findTotalAlimentos(ano);
+    }
+
 
 
     public PedidoItensDTO insert(PedidoItens pedidoItens) {

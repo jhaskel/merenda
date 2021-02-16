@@ -80,4 +80,13 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
             "            WHERE af. ativo= true  and ite.af = :af AND ite.af > 0 ", nativeQuery = true)
     double findTotalAf(Long af);
 
+    @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
+            "            INNER JOIN af ON af.code = ite.af\n" +
+            "            WHERE af. ativo= true   and ite.ano = :ano AND ite.af > 0 \n" +
+            "\t\t\t\tAND (ite.categoria = 1 OR ite.categoria = 2 \n" +
+            "OR ite.categoria = 3 \n" +
+            "OR ite.categoria = 5\n" +
+            "OR ite.categoria = 6) ", nativeQuery = true)
+    double findTotalAlimentos(Long ano);
+
 }
