@@ -44,7 +44,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
 
     @Query(value = "SELECT * FROM pedido_itens ite \n" +
             "                   INNER JOIN af ON af.code = ite.af          \n" +
-            "                     WHERE af. ativo= true   and ite.ano = :ano AND ite.af > 0 ", nativeQuery = true)
+            "                     WHERE af.ativo= true and ite.ano = :ano AND ite.af > 0 ", nativeQuery = true)
     List<PedidoItens> findEscolaAll(Long ano);
 
     @Query(value = "SELECT ite.* FROM pedido_itens ite\n" +
@@ -55,44 +55,44 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
 
     @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
-            "WHERE af. ativo= true   and ite.ano = :ano AND ite.af > 0 ", nativeQuery = true)
+            "WHERE af.ativo= true   and ite.ano = :ano AND ite.af > 0 ", nativeQuery = true)
     double findSomaTudo(Long ano);
 
 
 
     @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
-            "WHERE af. ativo= true   and ite.escola = :escola AND ite.af > 0 ", nativeQuery = true)
+            "WHERE af.ativo= true   and ite.escola = :escola AND ite.af > 0 ", nativeQuery = true)
     double findSoma(Long escola);
 
     @Query(value = "SELECT sum(ite.total) as totalAgro  FROM pedido_itens ite \n" +
             "INNER JOIN af ON af.code = ite.af          \n" +
-            "WHERE af. ativo= true  and ano = :ano and ite.escola = :escola AND ite.af > 0 AND ite.isagro = true", nativeQuery = true)
+            "WHERE af.ativo= true  and ano = :ano and ite.escola = :escola AND ite.af > 0 AND ite.isagro = true", nativeQuery = true)
     double findTotalAgroEscola(Long escola, Long ano);
 
     @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
             "            INNER JOIN af ON af.code = ite.af\n" +
-            "            WHERE af. ativo= true and nivel=:nivel AND ite.isagro = true and ite.ano = 2021 AND ite.af > 0 ", nativeQuery = true)
+            "            WHERE af.ativo= true and ite.nivel=:nivel AND ite.isagro = true and ite.ano = :ano AND ite.af > 0 ", nativeQuery = true)
     double findTotalAgroNivel(Long nivel, Long ano);
 
     @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
             "            INNER JOIN af ON af.code = ite.af\n" +
-            "            WHERE af. ativo= true  AND ite.isagro = true and ite.ano = 2021 AND ite.af > 0 ", nativeQuery = true)
+            "            WHERE af.ativo= true  AND ite.isagro = true and ite.ano = :ano AND ite.af > 0 ", nativeQuery = true)
     double findTotalAgro(Long ano);
 
     @Query(value = "SELECT sum(ite.total) as totalPedido  FROM pedido_itens ite \n" +
             "INNER JOIN af ON af.code = ite.af\n" +
-            "WHERE af. ativo= true   and ite.pedido = :pedido AND ite.af > 0 ", nativeQuery = true)
+            "WHERE af.ativo= true   and ite.pedido = :pedido AND ite.af > 0 ", nativeQuery = true)
     double findTotalPedido(String pedido);
 
     @Query(value = "SELECT sum(ite.total) as totalPedido  FROM pedido_itens ite \n" +
             "            INNER JOIN af ON af.code = ite.af\n" +
-            "            WHERE af. ativo= true  and ite.af = :af AND ite.af > 0 ", nativeQuery = true)
+            "            WHERE af.ativo= true  and ite.af = :af AND ite.af > 0 ", nativeQuery = true)
     double findTotalAf(Long af);
 
     @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
             "            INNER JOIN af ON af.code = ite.af\n" +
-            "            WHERE af. ativo= true   and ite.ano = :ano AND ite.af > 0 \n" +
+            "            WHERE af.ativo= true   and ite.ano = :ano AND ite.af > 0 \n" +
             "\t\t\t\tAND (ite.categoria = 1 OR ite.categoria = 2 \n" +
             "OR ite.categoria = 3 \n" +
             "OR ite.categoria = 5\n" +
