@@ -28,13 +28,6 @@ public class AfPedidoService {
     }
 
 
-    public List<AfPedidoDTO> getByAf(Long af) {
-        return rep.findByAf(af).stream().map(AfPedidoDTO::create).collect(Collectors.toList());
-    }
-    public long getAf(){
-        return rep.findAf();
-    }
-
 
     public AfPedidoDTO insert(AfPedido afPedido) {
         Assert.isNull(afPedido.getId(),"Não foi possível inserir o registro");
