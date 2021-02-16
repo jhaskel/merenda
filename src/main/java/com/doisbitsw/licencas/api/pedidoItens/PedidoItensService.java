@@ -76,8 +76,8 @@ public class PedidoItensService {
     }
 
 
-    public double getSomaTudo(Long ano){
-        return rep.findSomaTudo(ano);
+    public double getTotal(Long ano){
+        return rep.findTotal(ano);
     }
 
 

@@ -105,9 +105,9 @@ public class PedidoItensController {
                 ResponseEntity.ok(carros);
     }
 
-    @GetMapping("/somaTudo/{ano}")
-    public double getRepSomaTudo(@PathVariable("ano") Long ano) {
-        return service.getSomaTudo(ano);
+    @GetMapping("/total/{ano}")
+    public double getTotal(@PathVariable("ano") Long ano) {
+        return service.getTotal(ano);
     }
 
 
