@@ -77,9 +77,7 @@ public class PedidoItensService {
 
 
 
-    public double getSomaTudoAgro(Long ano){
-        return rep.findSomaTudoAgro(ano);
-    }
+
 
 
     public double getSoma(Long escola){
