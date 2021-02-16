@@ -91,8 +91,17 @@ public class PedidoItensService {
 
 
 
-    public double getSomaAgro(Long escola){
-        return rep.findSomaAgro(escola);
+    public double getTotalAgroEscola(Long escola,Long ano){
+        return rep.findTotalAgroEscola(escola,ano);
+    }
+
+    public double getTotalAgroNivel(Long nivel,Long ano){
+        return rep.findTotalAgroNivel(nivel,ano);
+    }
+
+
+    public double getTotalAgro(Long ano){
+        return rep.findTotalAgro(ano);
     }
 
     public double getTotalPedido(String pedido){

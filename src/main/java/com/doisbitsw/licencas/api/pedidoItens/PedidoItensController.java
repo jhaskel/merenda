@@ -117,9 +117,19 @@ public class PedidoItensController {
         return service.getSoma(escola);
     }
 
-    @GetMapping("/somaAgro/{escola}")
-    public double getRepAgro(@PathVariable("escola") Long escola) {
-        return service.getSomaAgro(escola);
+    @GetMapping("/totalAgroEscola/{escola}/{ano}")
+    public double getTotalAgroEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
+        return service.getTotalAgroEscola(escola,ano);
+    }
+
+    @GetMapping("/totalAgroNivel/{escola}/{ano}")
+    public double getTotalAgroNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {
+        return service.getTotalAgroNivel(nivel,ano);
+    }
+
+    @GetMapping("/totalAgro/{ano}")
+    public double getTotalAgro(@PathVariable("ano") Long ano) {
+        return service.getTotalAgro(ano);
     }
 
     @GetMapping("/totalPedido/{pedido}")
