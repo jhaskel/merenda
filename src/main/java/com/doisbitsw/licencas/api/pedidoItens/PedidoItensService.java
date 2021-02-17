@@ -111,6 +111,11 @@ public class PedidoItensService {
     }
 
 
+    public List<PedidoItensDTO> getMediaAlunosNivel(Long nivel,Long ano) {
+        return rep.findMediaAlunosNivel(nivel,ano).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
+    }
+
+
     public double getTotal(Long ano){
         return rep.findTotal(ano);
     }
