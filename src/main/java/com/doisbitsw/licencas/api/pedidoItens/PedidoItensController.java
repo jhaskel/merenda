@@ -145,6 +145,14 @@ public class PedidoItensController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/totalEscolaNivel/{nivel}/{ano}")
+    public ResponseEntity getTotalEScolaNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {
+        List<PedidoItensDTO> carros = service.getTotalEscolaNivel(nivel,ano);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
     @GetMapping("/mediaAlunos/{ano}")
     public ResponseEntity getMediaAlunos(@PathVariable("ano") Long ano) {
         List<PedidoItensDTO> carros = service.getMediaAlunos(ano);
