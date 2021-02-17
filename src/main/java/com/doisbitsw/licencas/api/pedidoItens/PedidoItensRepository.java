@@ -22,7 +22,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     @Query(value = "SELECT * FROM pedido_itens WHERE pedido = :pedido and ischeck = false;", nativeQuery = true)
     List<PedidoItens> findByPedido(String pedido);
 
-    @Query(value = "SELECT * FROM pedido_itens WHERE pedido = :pedido AND ativo = true  ORDER BY fornecedor, alias ;", nativeQuery = true)
+    @Query(value = "SELECT *,nomec FROM pedido_itens WHERE pedido = :pedido AND ativo = true  ORDER BY fornecedor, alias", nativeQuery = true)
     List<PedidoItens> findByPedidoAll(String pedido);
 
     @Query(value = "SELECT * FROM pedido_itens WHERE af = :af ;", nativeQuery = true)
