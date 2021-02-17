@@ -61,7 +61,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     List<PedidoItens> findTotalMes(Long ano);
 
 
-    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,cat.nome as nomec FROM pedido_itens ite\n" +
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "INNER JOIN categoria cat ON cat.id = ite.categoria\n" +
             "WHERE af.ativo = TRUE AND ite.ano = :ano\n" +
