@@ -76,6 +76,12 @@ public class PedidoItensService {
     }
 
 
+
+    public List<PedidoItensDTO> getTotalMes(Long ano) {
+        return rep.findTotalMes(ano).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
+    }
+
+
     public double getTotal(Long ano){
         return rep.findTotal(ano);
     }
