@@ -43,6 +43,7 @@ public class PedidoItens {
     private Boolean ativo;
 
     private Double tot;
+    private String nomec;
 
 
 }
