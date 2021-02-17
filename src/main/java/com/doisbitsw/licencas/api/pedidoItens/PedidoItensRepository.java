@@ -70,6 +70,13 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot, cat.nome as nomec FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "INNER JOIN categoria cat ON cat.id = ite.categoria\n" +
+            "WHERE af.ativo = TRUE AND ite.ano = :ano and ite.nivel = :nivel\n" +
+            "GROUP BY ite.categoria ", nativeQuery = true)
+    List<PedidoItens> findTotalCategoriaNivel(Long nivel,Long ano);
+
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot, cat.nome as nomec FROM pedido_itens ite\n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "INNER JOIN categoria cat ON cat.id = ite.categoria\n" +
             "WHERE af.ativo = TRUE AND ite.ano = :ano\n" +
             "GROUP BY ite.categoria ", nativeQuery = true)
     List<PedidoItens> findTotalCategoria(Long ano);
