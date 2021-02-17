@@ -25,8 +25,5 @@ public class UnidadeEscolar {
     private String created;
     private String modified;
 
-
-
-
 }
 

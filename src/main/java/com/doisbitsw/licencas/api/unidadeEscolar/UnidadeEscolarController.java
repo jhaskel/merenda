@@ -55,7 +55,6 @@ public class UnidadeEscolarController {
     }
 
 
-
     @PostMapping
 
     public ResponseEntity post(@RequestBody UnidadeEscolar unidadeEscolar) {

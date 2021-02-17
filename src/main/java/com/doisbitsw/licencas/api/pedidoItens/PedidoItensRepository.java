@@ -88,13 +88,6 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
             "            GROUP BY ite.escola", nativeQuery = true)
     List<PedidoItens> findTotalEscolaNivel(Long nivel,Long ano);
 
-    @Query(value = "SELECT ite.*,sum(ite.total) AS tot, esc.alias as nomec FROM pedido_itens ite\n" +
-            "INNER JOIN af ON af.code = ite.af\n" +
-            "INNER JOIN unidade_escolar esc ON esc.id = ite.escola\n" +
-            "WHERE af.ativo = TRUE AND ite.ano = :ano\n" +
-            "GROUP BY ite.escola", nativeQuery = true)
-    List<PedidoItens> findTotalEscola(Long ano);
-
 
     @Query(value = "SELECT ite.*,sum(ite.total/esc.alunos) AS tot, esc.alias as nomec FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
@@ -121,6 +114,11 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
             "INNER JOIN af ON af.code = ite.af\n" +
             "WHERE af.ativo= true   and ite.ano = :ano AND ite.af > 0 AND ite.nivel = :nivel ", nativeQuery = true)
     double findTotalNivel(Long nivel,Long ano);
+
+    @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "WHERE af.ativo= true   and ite.ano = :ano AND ite.af > 0 AND ite.escola = :escola ", nativeQuery = true)
+    double findTotalEscola(Long escola,Long ano);
 
 
 
