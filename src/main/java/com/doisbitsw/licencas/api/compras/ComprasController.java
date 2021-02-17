@@ -9,7 +9,7 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/itens")
+@RequestMapping("/api/v1/compras")
 public class ComprasController {
     @Autowired
     private ComprasService service;
