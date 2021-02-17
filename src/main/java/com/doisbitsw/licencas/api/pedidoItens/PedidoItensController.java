@@ -143,6 +143,12 @@ public class PedidoItensController {
         return service.getTotal(ano);
     }
 
+    @GetMapping("/totalNivel/{nivel}/{ano}")
+    public double getTotalNivel(@PathVariable("nivel") Long nivel, @PathVariable("ano") Long ano) {
+        return service.getTotalNivel(nivel,ano);
+    }
+
+
 
 
     @GetMapping("/somaAll/{escola}")

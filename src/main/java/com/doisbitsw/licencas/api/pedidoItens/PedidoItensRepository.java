@@ -82,13 +82,17 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     List<PedidoItens> findMediaAlunos(Long ano);
 
 
-
-
-
     @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
             "WHERE af.ativo= true   and ite.ano = :ano AND ite.af > 0 ", nativeQuery = true)
     double findTotal(Long ano);
+
+
+    @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "WHERE af.ativo= true   and ite.ano = :ano AND ite.af > 0 AND ite.nivel = :nivel ", nativeQuery = true)
+    double findTotalNivel(Long nivel,Long ano);
+
 
 
 

@@ -103,6 +103,13 @@ public class PedidoItensService {
 
 
 
+    public double getTotalNivel(Long nivel,Long ano){
+        return rep.findTotalNivel(nivel,ano);
+    }
+
+
+
+
 
 
 
