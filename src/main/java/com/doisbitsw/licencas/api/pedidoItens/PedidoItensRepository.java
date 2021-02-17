@@ -61,7 +61,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod as nomec  FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
-            "WHERE af.ativo = TRUE AND ite.ano = :ano and nivel = :nivel\n" +
+            "WHERE af.ativo = TRUE AND ite.ano = :ano and ite.nivel = :nivel\n" +
             "GROUP BY ite.mes ", nativeQuery = true)
     List<PedidoItens> findTotalMesNivel(Long nivel,Long ano);
 
