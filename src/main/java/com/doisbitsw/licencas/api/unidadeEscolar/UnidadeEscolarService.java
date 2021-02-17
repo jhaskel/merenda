@@ -38,6 +38,8 @@ public class UnidadeEscolarService {
 
     public long getQuantAlunosEscola(Long id){ return rep.findQuantAlunosEscola(id); }
 
+    public long getQuantEscolaNivel(Long nivel){ return rep.findQuantEscolaNivel(nivel); }
+
 
     public UnidadeEscolarDTO insert(UnidadeEscolar unidadeEscolar) {
         Assert.isNull(unidadeEscolar.getId(),"Não foi possível inserir o registro");

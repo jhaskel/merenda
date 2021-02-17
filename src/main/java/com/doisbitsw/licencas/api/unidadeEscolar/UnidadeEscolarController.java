@@ -51,7 +51,12 @@ public class UnidadeEscolarController {
 
     @GetMapping("/quantAlunosEscola/{id}")
     public long getQuantAlunosEscola(@PathVariable("id") Long id) {
-        return service.getQuantAlunosNivel(id);
+        return service.getQuantAlunosEscola(id);
+    }
+
+    @GetMapping("/quantEscolaNivel/{nivelescolar}")
+    public long getQuantEscolaNivel(@PathVariable("nivelescolar") Long nivel) {
+        return service.getQuantEscolaNivel(nivel);
     }
 
 
