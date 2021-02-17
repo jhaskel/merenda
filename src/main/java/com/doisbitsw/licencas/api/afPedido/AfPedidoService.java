@@ -1,4 +1,4 @@
-package com.doisbitsw.licencas.afPedido;
+package com.doisbitsw.licencas.api.afPedido;
 
 import com.doisbitsw.licencas.api.infra.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

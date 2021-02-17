@@ -1,4 +1,4 @@
-package com.doisbitsw.licencas.afPedido;
+package com.doisbitsw.licencas.api.afPedido;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
