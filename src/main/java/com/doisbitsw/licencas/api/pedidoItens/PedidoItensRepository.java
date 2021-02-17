@@ -74,6 +74,13 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
             "GROUP BY ite.escola", nativeQuery = true)
     List<PedidoItens> findTotalEscola(Long ano);
 
+    @Query(value = "SELECT ite.*,sum(ite.total/esc.alunos) AS tot, esc.nome as nomec FROM pedido_itens ite\n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "INNER JOIN unidade_escolar esc ON esc.id = ite.escola\n" +
+            "WHERE af.ativo = TRUE AND ite.ano = :ano AND esc.alunos > 0\n" +
+            "GROUP BY ite.escola ", nativeQuery = true)
+    List<PedidoItens> findMediaAlunos(Long ano);
+
 
 
 

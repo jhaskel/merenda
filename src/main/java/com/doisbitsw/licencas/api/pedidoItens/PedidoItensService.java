@@ -92,6 +92,11 @@ public class PedidoItensService {
     }
 
 
+    public List<PedidoItensDTO> getMediaAlunos(Long ano) {
+        return rep.findMediaAlunos(ano).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
+    }
+
+
     public double getTotal(Long ano){
         return rep.findTotal(ano);
     }
