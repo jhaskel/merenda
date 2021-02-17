@@ -96,6 +96,9 @@ public class PedidoItensService {
         return rep.findTotalCategoriaNivel(nivel,ano).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
     }
 
+    public List<PedidoItensDTO> getTotalEscolas(Long ano) {
+        return rep.findTotalEscolas(ano).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
+    }
 
 
     public List<PedidoItensDTO> getTotalEscolaNivel(Long nivel,Long ano) {

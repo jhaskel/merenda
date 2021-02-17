@@ -84,6 +84,13 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot, esc.alias as nomec FROM pedido_itens ite\n" +
             "            INNER JOIN af ON af.code = ite.af\n" +
             "            INNER JOIN unidade_escolar esc ON esc.id = ite.escola \n" +
+            "            WHERE af.ativo = TRUE AND ite.ano = :ano \n" +
+            "            GROUP BY ite.escola", nativeQuery = true)
+    List<PedidoItens> findTotalEscolas(Long ano);
+
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot, esc.alias as nomec FROM pedido_itens ite\n" +
+            "            INNER JOIN af ON af.code = ite.af\n" +
+            "            INNER JOIN unidade_escolar esc ON esc.id = ite.escola \n" +
             "            WHERE af.ativo = TRUE AND ite.ano = :ano and ite.nivel = :nivel\n" +
             "            GROUP BY ite.escola", nativeQuery = true)
     List<PedidoItens> findTotalEscolaNivel(Long nivel,Long ano);
