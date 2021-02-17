@@ -222,6 +222,7 @@ public class PedidoItensController {
     }
 
 
+
     @GetMapping("/tradicionalEscola/{escola}/{ano}")
     public double getTradicionalEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
         return service.getTradicionalEscola(escola,ano);
@@ -238,6 +239,13 @@ public class PedidoItensController {
     public double getDiversosNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {
         return service.getDiversosNivel(nivel,ano);
     }
+
+
+    @GetMapping("/diversosEscola/{escola}/{ano}")
+    public double getDiversosEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
+        return service.getDiversosEscola(escola,ano);
+    }
+
 
 
 

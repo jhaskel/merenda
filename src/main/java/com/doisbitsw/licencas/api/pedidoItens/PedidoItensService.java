@@ -172,6 +172,7 @@ public class PedidoItensService {
     }
 
 
+
     public double getDiversos(Long ano){
         return rep.findDiversos(ano);
     }
@@ -179,6 +180,11 @@ public class PedidoItensService {
 
     public double getDiversosNivel(Long nivel,Long ano){
         return rep.findDiversosNivel(nivel,ano);
+    }
+
+
+    public double getDiversosEscola(Long escola,Long ano){
+        return rep.findDiversosEscola(escola,ano);
     }
 
 
