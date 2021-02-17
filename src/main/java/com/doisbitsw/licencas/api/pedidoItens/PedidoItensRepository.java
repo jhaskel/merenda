@@ -22,7 +22,11 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     @Query(value = "SELECT * FROM pedido_itens WHERE pedido = :pedido and ischeck = false;", nativeQuery = true)
     List<PedidoItens> findByPedido(String pedido);
 
-    @Query(value = "SELECT *,nomec FROM pedido_itens WHERE pedido = :pedido AND ativo = true  ORDER BY fornecedor, alias", nativeQuery = true)
+    @Query(value = "SELECT ite.*,ite.cod AS nomec FROM pedido_itens ite\n" +
+            "\n" +
+            " WHERE ite.pedido = :pedido \n" +
+            " AND ite.ativo = true  \n" +
+            " ORDER BY ite.fornecedor, ite.alias ", nativeQuery = true)
     List<PedidoItens> findByPedidoAll(String pedido);
 
     @Query(value = "SELECT * FROM pedido_itens WHERE af = :af ;", nativeQuery = true)
@@ -70,8 +74,6 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
             "WHERE af.ativo = TRUE AND ite.ano = :ano and ite.escola = :escola\n" +
             "GROUP BY ite.mes ", nativeQuery = true)
     List<PedidoItens> findTotalMesEscola(Long escola,Long ano);
-
-
 
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot, cat.nome as nomec FROM pedido_itens ite\n" +
