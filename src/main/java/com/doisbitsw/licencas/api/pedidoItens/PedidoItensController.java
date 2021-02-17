@@ -120,6 +120,14 @@ public class PedidoItensController {
                 ResponseEntity.ok(carros);
     }
 
+    @GetMapping("/totalMesEscola/{escola}/{ano}")
+    public ResponseEntity getTotalMesEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
+        List<PedidoItensDTO> carros = service.getTotalMesEscola(escola,ano);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
 
 
     @GetMapping("/totalCategoria/{ano}")
@@ -133,6 +141,14 @@ public class PedidoItensController {
     @GetMapping("/totalCategoriaNivel/{nivel}/{ano}")
     public ResponseEntity getTotalCategoriaNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {
         List<PedidoItensDTO> carros = service.getTotalCategoriaNivel(nivel,ano);
+        return carros.isEmpty() ?
+                ResponseEntity.noContent().build() :
+                ResponseEntity.ok(carros);
+    }
+
+    @GetMapping("/totalCategoriaEscola/{escola}/{ano}")
+    public ResponseEntity getTotalCategoriaEscola(@PathVariable("escola") Long escola,@PathVariable("ano") Long ano) {
+        List<PedidoItensDTO> carros = service.getTotalCategoriaEscola(escola,ano);
         return carros.isEmpty() ?
                 ResponseEntity.noContent().build() :
                 ResponseEntity.ok(carros);

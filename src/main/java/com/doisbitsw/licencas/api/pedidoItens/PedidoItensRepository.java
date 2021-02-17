@@ -65,6 +65,13 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
             "GROUP BY ite.mes ", nativeQuery = true)
     List<PedidoItens> findTotalMesNivel(Long nivel,Long ano);
 
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod as nomec  FROM pedido_itens ite\n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "WHERE af.ativo = TRUE AND ite.ano = :ano and ite.escola = :escola\n" +
+            "GROUP BY ite.mes ", nativeQuery = true)
+    List<PedidoItens> findTotalMesEscola(Long escola,Long ano);
+
+
 
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot, cat.nome as nomec FROM pedido_itens ite\n" +
@@ -73,6 +80,13 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
             "WHERE af.ativo = TRUE AND ite.ano = :ano and ite.nivel = :nivel\n" +
             "GROUP BY ite.categoria ", nativeQuery = true)
     List<PedidoItens> findTotalCategoriaNivel(Long nivel,Long ano);
+
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot, cat.nome as nomec FROM pedido_itens ite\n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "INNER JOIN categoria cat ON cat.id = ite.categoria\n" +
+            "WHERE af.ativo = TRUE AND ite.ano = :ano and ite.escola = :escola\n" +
+            "GROUP BY ite.categoria ", nativeQuery = true)
+    List<PedidoItens> findTotalCategoriaEscola(Long nivel,Long ano);
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot, cat.nome as nomec FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
