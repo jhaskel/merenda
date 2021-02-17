@@ -159,4 +159,10 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
             "AND (ite.categoria = 4 OR ite.categoria = 7)  ", nativeQuery = true)
     double findDiversos(Long ano);
 
+    @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "WHERE af.ativo= true   and ite.ano = :ano AND ite.nivel = 3 AND ite.af > 0\n" +
+            "AND (ite.categoria = 4 OR ite.categoria = 7)  ", nativeQuery = true)
+    double findDiversosNivel(Long nivel,Long ano);
+
 }

@@ -206,6 +206,12 @@ public class PedidoItensController {
     }
 
 
+    @GetMapping("/diversosNivel/{nivel}/{ano}")
+    public double getDiversosNivel(@PathVariable("nivel") Long nivel,@PathVariable("ano") Long ano) {
+        return service.getDiversosNivel(nivel,ano);
+    }
+
+
 
 
 

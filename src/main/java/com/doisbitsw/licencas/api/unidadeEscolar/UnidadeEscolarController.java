@@ -49,6 +49,11 @@ public class UnidadeEscolarController {
         return service.getQuantAlunosNivel(nivel);
     }
 
+    @GetMapping("/quantAlunosEscola/{id}")
+    public long getQuantAlunosEscola(@PathVariable("id") Long id) {
+        return service.getQuantAlunosNivel(id);
+    }
+
 
 
 

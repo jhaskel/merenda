@@ -36,6 +36,8 @@ public class UnidadeEscolarService {
 
     public long getQuantAlunosNivel(Long nivel){ return rep.findQuantAlunosNivel(nivel); }
 
+    public long getQuantAlunosEscola(Long id){ return rep.findQuantAlunosEscola(id); }
+
 
     public UnidadeEscolarDTO insert(UnidadeEscolar unidadeEscolar) {
         Assert.isNull(unidadeEscolar.getId(),"Não foi possível inserir o registro");

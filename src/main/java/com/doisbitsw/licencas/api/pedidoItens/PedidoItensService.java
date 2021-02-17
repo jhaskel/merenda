@@ -160,6 +160,11 @@ public class PedidoItensService {
     }
 
 
+    public double getDiversosNivel(Long nivel,Long ano){
+        return rep.findDiversosNivel(nivel,ano);
+    }
+
+
 
     public PedidoItensDTO insert(PedidoItens pedidoItens) {
         Assert.isNull(pedidoItens.getId(),"Não foi possível inserir o registro");
