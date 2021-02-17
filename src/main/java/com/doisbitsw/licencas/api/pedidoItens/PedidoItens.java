@@ -42,6 +42,8 @@ public class PedidoItens {
     private String mes;
     private Boolean ativo;
 
+    private Double tot;
+
 
 }
 
