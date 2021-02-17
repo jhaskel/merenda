@@ -82,6 +82,11 @@ public class PedidoItensService {
     }
 
 
+    public List<PedidoItensDTO> getTotalMesNivel(Long nivel,Long ano) {
+        return rep.findTotalMesNivel(nivel,ano).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
+    }
+
+
     public List<PedidoItensDTO> getTotalCategoria(Long ano) {
         return rep.findTotalCategoria(ano).stream().map(PedidoItensDTO::create).collect(Collectors.toList());
     }
@@ -102,18 +107,10 @@ public class PedidoItensService {
     }
 
 
-
     public double getTotalNivel(Long nivel,Long ano){
         return rep.findTotalNivel(nivel,ano);
     }
-
-
-
-
-
-
-
-    public double getSoma(Long escola){
+   public double getSoma(Long escola){
         return rep.findSoma(escola);
     }
 

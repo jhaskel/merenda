@@ -59,6 +59,13 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
             "GROUP BY ite.mes ", nativeQuery = true)
     List<PedidoItens> findTotalMes(Long ano);
 
+    @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod as nomec  FROM pedido_itens ite\n" +
+            "INNER JOIN af ON af.code = ite.af\n" +
+            "WHERE af.ativo = TRUE AND ite.ano = :ano and nivel = :nivel\n" +
+            "GROUP BY ite.mes ", nativeQuery = true)
+    List<PedidoItens> findTotalMesNivel(Long nivel,Long ano);
+
+
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot, cat.nome as nomec FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
@@ -161,7 +168,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
 
     @Query(value = "SELECT sum(ite.total) as tot  FROM pedido_itens ite\n" +
             "INNER JOIN af ON af.code = ite.af\n" +
-            "WHERE af.ativo= true   and ite.ano = :ano AND ite.nivel = 3 AND ite.af > 0\n" +
+            "WHERE af.ativo= true   and ite.ano = :ano AND ite.nivel = :nivel AND ite.af > 0\n" +
             "AND (ite.categoria = 4 OR ite.categoria = 7)  ", nativeQuery = true)
     double findDiversosNivel(Long nivel,Long ano);
 
