@@ -19,12 +19,12 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
     List<PedidoItens> findAll3();
 
 
-    @Query(value = "SELECT * FROM pedido_itens WHERE pedido = :pedido and ischeck = false;", nativeQuery = true)
+    @Query(value = "SELECT * FROM pedido_itens WHERE pedido = :pedido ", nativeQuery = true)
     List<PedidoItens> findByPedido(String pedido);
 
     @Query(value = "SELECT ite.*,sum(ite.total) AS tot,ite.cod AS nomec FROM pedido_itens ite\n" +
             "\n" +
-            " WHERE ite.pedido = '1611942997' \n" +
+            " WHERE ite.pedido = :pedido' \n" +
             " AND ite.ativo = true  \n" +
             " GROUP BY ite.id\n" +
             " ORDER BY ite.fornecedor, ite.alias  ", nativeQuery = true)
