@@ -201,6 +201,13 @@ public class PedidoItensService {
     }
 
 
+    public long getCart(Long escola){
+        return rep.findCart(escola);
+    }
+
+
+
+
 
     public PedidoItensDTO insert(PedidoItens pedidoItens) {
         Assert.isNull(pedidoItens.getId(),"Não foi possível inserir o registro");

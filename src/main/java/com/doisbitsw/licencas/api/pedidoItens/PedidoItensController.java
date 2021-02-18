@@ -269,8 +269,10 @@ public class PedidoItensController {
         return service.getDiversosEscola(escola,ano);
     }
 
-
-
+    @GetMapping("/cart/{escola}")
+    public long getCart(@PathVariable("escola") Long escola) {
+        return service.getCart(escola);
+    }
 
 
 

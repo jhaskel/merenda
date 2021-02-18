@@ -227,4 +227,7 @@ public interface PedidoItensRepository extends JpaRepository<PedidoItens, Long> 
             "AND (ite.categoria = 4 OR ite.categoria = 7)  ", nativeQuery = true)
     double findDiversosEscola(Long escola,Long ano);
 
+    @Query(value = "SELECT count(ite.id) as tot FROM pedido_itens ite INNER JOIN pedido ped ON ped.code = ite.pedido WHERE  ite.ativo = true AND ped.ativo=true AND ite.escola=:escola AND ped.iscart = true", nativeQuery = true)
+    long findCart(Long escola);
+
 }
